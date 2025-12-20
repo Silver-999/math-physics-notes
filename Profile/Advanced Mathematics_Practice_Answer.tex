@@ -1,0 +1,1132 @@
+\documentclass{article}
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{esvect}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+\section{Problem}
+Find the distance from $P(3,-1,2)$ to the line $\begin{cases} x + y - z = -1 \\ 2x - y + z = 4 \end{cases}$.
+\section*{Solution}
+\[
+\vec{s} = 
+\begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k} \\
+1 & 1 & -1 \\
+2 & -1 & 1 \\
+\end{vmatrix}
+= (0, -3, -3) \sim (0,1,1)
+\]
+$$Q(1,-2,0),\overrightarrow{QP} = (2,1,2)$$
+\[d = \frac{|\overrightarrow{QP} \times \vec{s}|}{|\vec{s}|} = \frac{|(-1,-2,2)|}{\sqrt{2}} = \boxed{\dfrac{3\sqrt{2}}{2}}\]
+
+\section{Problem}
+$|\vv{a}| = 3$, $|\vv{b}| = 4$, $|\vv{c}| = 5$, $\vv{a} + \vv{b} + \vv{c} = \vv{0}$ \\
+Find the value of $|\vv{a} \times \vv{b} + \vv{b} \times \vv{c} + \vv{c} \times \vv{a}|$
+\section*{Solution}
+$$ \vv{c}=-\vv{a}-\vv{b}$$
+\begin{align*}
+\vv{b}\times\vv{c} &= \vv{a}\times\vv{b} \\
+\vv{c}\times\vv{a} &= \vv{a}\times\vv{b}
+\end{align*}
+\[\Rightarrow \quad \vv{a} \times \vv{b} + \vv{b} \times \vv{c} + \vv{c} \times \vv{a} = 3 (\vv{a} \times \vv{b})\]
+$\sum \vv{a}\times\vv{b} = 3(\vv{a}\times\vv{b})$
+$|\vv{a}\times\vv{b}|=|\vv{a}||\vv{b}|\sin\theta=12$ (sin $\theta=90^\circ$ from $\vv{a}\cdot\vv{b}=0$)
+\[|3(\vv{a}\times\vv{b})| = 3\times12 = \boxed{36}\]
+
+\section{Problem}
+Find the value of $L = \lim_{x \to 0} \frac{|\vv{a} + x\vv{b}| - |\vv{a} - x\vv{b}|}{x}$
+\section*{Solution}
+\begin{align*}
+L &= \lim_{x \to 0} \frac{|\vv{a} + x\vv{b}| - |\vv{a} - x\vv{b}|}{x} \\
+&= \lim_{x \to 0} \frac{(|\vv{a}+x\vv{b}| - |\vv{a}-x\vv{b}|)(|\vv{a}+x\vv{b}| + |\vv{a}-x\vv{b}|)}{x(|\vv{a}+x\vv{b}| + |\vv{a}-x\vv{b}|)} \\
+&= \lim_{x \to 0} \frac{|\vv{a}+x\vv{b}|^2 - |\vv{a}-x\vv{b}|^2}{x(|\vv{a}+x\vv{b}| + |\vv{a}-x\vv{b}|)} \\
+&= \lim_{x \to 0} \frac{4x(\vv{a} \cdot \vv{b})}{x(2|\vv{a}| + O(x^2))} \\
+&= \boxed{\frac{2(\vv{a} \cdot \vv{b})}{|\vv{a}|}}
+\end{align*}
+
+\newpage
+
+\section{Problem}
+Find the distance from point $P(1,2,-1)$ to the line $L: \frac{x-1}{2} = \frac{y+1}{-1} = \frac{z-2}{3}$.
+\section*{Solution}
+Given line $L$ passes through point $Q(1,-1,2)$ , $\vec{v} = (2, -1, 3)$. 
+$\overrightarrow{QP} = (0, 3, -3)$. \\
+Distance $d = \dfrac{\|\overrightarrow{QP} \times \vec{v}\|}{\|\vec{v}\|} = \dfrac{\|(-6, -6, -6)\|}{\sqrt{14}} = \dfrac{\sqrt{108}}{\sqrt{14}} = \boxed{\dfrac{3\sqrt{42}}{7}}$.
+
+\section{Problem}
+Find and classify the critical points of the function $f(x,y) = e^{-x}(x - y^3 + 3y)$.
+\section*{Solution}
+\subsection*{Step 1: Find Critical Points}
+\begin{align*}
+f_x &= e^{-x}(-x + y^3 - 3y + 1) \\
+f_y &= e^{-x}(-3y^2 + 3)
+\end{align*}
+Set $f_y = 0$:
+\[ -3y^2 + 3 = 0 \Rightarrow y = \pm 1 \]
+Critical points: $(-1,1)$ and $(3,-1)$.
+\subsection*{Step 2: Second Derivative Test}
+\begin{align*}
+f_{xx} &= e^{-x}(x - y^3 + 3y - 2) \\
+f_{xy} &= e^{-x}(3y^2 - 3) \\
+f_{yy} &= e^{-x}(-6y)
+\end{align*}
+At $(-1,1)$:
+\begin{align*}
+A &= f_{xx}(-1,1) = e^{1}(-1 -1 + 3 - 2) = -e \\
+B &= f_{xy}(-1,1) = e^{1}(3 - 3) = 0 \\
+C &= f_{yy}(-1,1) = e^{1}(-6) = -6e \\
+AC - B^2 &= (-e)(-6e) - 0 = 6e^2 > 0 \text{ and } A < 0 \\
+&\boxed{\Rightarrow \text{Local maximum at } (-1,1)}
+\end{align*}
+At $(3,-1)$:
+\begin{align*}
+A &= f_{xx}(3,-1) = e^{-3}(3 +1 -3 -2) = -e^{-3} \\
+B &= f_{xy}(3,-1) = e^{-3}(3 - 3) = 0 \\
+C &= f_{yy}(3,-1) = e^{-3}(6) = 6e^{-3} \\
+AC - B^2 &= (-e^{-3})(6e^{-3}) - 0 = -6e^{-6} < 0 \\
+&\boxed{\Rightarrow \text{Saddle point at } (3,-1)}
+\end{align*}
+
+\newpage
+
+\section{Problem}
+Find points on $C: \begin{cases} 
+x^2 + y^2 = 2z^2 \\ 
+x + y + 3z = 5 
+\end{cases}$ with extremal distances to the $xOy$ plane.
+\section*{Solution}
+\subsection*{Method 1: Lagrangian}
+\[
+\begin{aligned}
+\mathcal{L} &= z^2 + \lambda(x^2 + y^2 - 2z^2) + \mu(x + y + 3z - 5) \\ 
+\mathcal{L}_x &= 2\lambda x + \mu = 0 \\
+\mathcal{L}_y &= 2\lambda y + \mu = 0 \\
+\mathcal{L}_z &= 2z(1 - 2\lambda) + 3\mu = 0
+\end{aligned}
+\]
+From $\mathcal{L}_x = \mathcal{L}_y$:
+\[x = y\]
+\[2x^2 = 2z^2 \Rightarrow x = \pm z\]
+\[
+\begin{cases}
+x = z \Rightarrow 2z + 3z = 5 \Rightarrow (1,1,1) \\
+x = -z \Rightarrow -2z + 3z = 5 \Rightarrow (-5,-5,5)
+\end{cases}
+\]
+\[
+\boxed{
+\begin{cases}
+\text{Closest: } (1,1,1) \ (|z|=1) \\
+\text{Farthest: } (-5,-5,5) \ (|z|=5)
+\end{cases}
+}
+\]
+\subsection*{Method 2: Parametric Optimization}
+From the plane equation: $y = 5 - x - 3z$. Substitute into the cone:
+\begin{align*}
+&x^2 + (5 - x - 3z)^2 = 2z^2 \\
+&2x^2 + 2x(3z - 5) + (25 + 9z^2 - 30z - 2z^2) = 0 \\
+&2x^2 + (6z - 10)x + (7z^2 - 30z + 25) = 0
+\end{align*}
+For real solutions, discriminant $D \geq 0$:
+\begin{align*}
+&(6z - 10)^2 - 8(7z^2 - 30z + 25) \geq 0 \\
+&-20z^2 + 120z - 100 \geq 0 \\
+&z^2 - 6z + 5 \leq 0 \\
+&(z - 1)(z - 5) \leq 0 \\
+&\Rightarrow z \in [1,5]
+\end{align*}
+Extrema occur at endpoints and critical points:
+\begin{align*}
+\frac{d}{dz}\left(\frac{10-6z \pm \sqrt{-20z^2+120z-100}}{4}\right) &= 0 \\
+\Rightarrow z &= 1 \text{ or } 5
+\end{align*}
+Corresponding points:
+\begin{itemize}
+\item $z=1 \Rightarrow x=y=1 \Rightarrow \boxed{(1,1,1)}$
+\item $z=5 \Rightarrow x=y=-5 \Rightarrow \boxed{(-5,-5,-5)}$
+\end{itemize}
+
+\newpage
+
+\section{Problem}
+$A(1,3,4)$, $B(3,5,6)$, $C(2,5,8)$, $D(4,2,10)$ , Find the value of: $V_{\text{ABCD}}$.
+\section*{Solution}
+\[ V = \frac{1}{6} \left| \det \begin{pmatrix} \overrightarrow{AB} \\ \overrightarrow{AC} \\ \overrightarrow{AD} \end{pmatrix} \right|, \quad
+\begin{aligned} 
+\overrightarrow{AB} &= (2, 2, 2) \\ 
+\overrightarrow{AC} &= (1, 2, 4) \\ 
+\overrightarrow{AD} &= (3, -1, 6) 
+\end{aligned} \]
+\[ \begin{vmatrix} 2 & 2 & 2 \\ 1 & 2 & 4 \\ 3 & -1 & 6 \end{vmatrix} = 2(16)-2(-6)+2(-7) = 30 \]
+\[ V = \tfrac{1}{6}\times30 = \boxed{5} \]
+
+\section{Problem}
+A plane passes through the z-axis and forms an angle of $\frac{\pi}{3}$ with the plane $2x + y - \sqrt{5}z = 0$.\\
+Find the equation of the plane.
+\section*{Solution}
+$$ax + by = 0$$
+$$\vec{n_1} = (2, 1, -\sqrt{5}), \vec{n_2} = (a, b, 0)$$
+\[\cos\frac{\pi}{3} = \frac{|\vec{n_1} \cdot \vec{n_2}|}{\|\vec{n_1}\|\|\vec{n_2}\|} = \frac{|2a + b|}{\sqrt{10} \cdot \sqrt{a^2 + b^2}} = \frac{1}{2}\]
+\[2|2a + b| = \sqrt{10(a^2 + b^2)}\]
+\[4(4a^2 + 4ab + b^2) = 10(a^2 + b^2) \Rightarrow 6a^2 + 16ab - 6b^2 = 0\]
+\[3\left(\frac{a}{b}\right)^2 + 8\left(\frac{a}{b}\right) - 3 = 0\]
+Let $k = \frac{a}{b}$:
+\[3k^2 + 8k - 3 = 0 \Rightarrow k = -3 \text{ or } \frac{1}{3}\]
+\[\frac{a}{b} = -3 \Rightarrow x + 3y = 0\]
+\[\frac{a}{b} = \frac{1}{3} \Rightarrow -3x + y = 0\]
+The plane equations are $\boxed{x + 3y = 0}$ or $\boxed{-3x + y = 0}$.
+
+\newpage
+
+\section{Problem}
+Prove that the lines $L_1:\frac{x}{1}=\frac{y}{2}=\frac{z}{3}$ and $L_2:\frac{x-1}{1}=\frac{y+1}{1}=\frac{z-2}{1}$ are skew lines,\\
+find their common perpendicular, and calculate the distance between them.
+\section*{Solution}
+\subsection*{Part 1: Prove Skew Lines}
+Direction vectors and points:
+\begin{itemize}
+\item For $L_1$: $\vec{v}_1=(1,2,3)$, passing through $P_1(0,0,0)$
+\item For $L_2$: $\vec{v}_2=(1,1,1)$, passing through $P_2(1,-1,2)$
+\end{itemize}
+Verify skew condition:
+\[
+\boxed{
+(\overrightarrow{P_1P_2} \times \vec{v}_1) \cdot \vec{v}_2 = 
+\begin{vmatrix}
+1 & -1 & 2 \\
+1 & 2 & 3 \\
+1 & 1 & 1 \\
+\end{vmatrix}
+= 5 \neq 0}
+\]
+\subsection*{Part 2: Common Perpendicular}
+Direction vector of perpendicular:
+\[
+\vec{n} = \vec{v}_1 \times \vec{v}_2 = 
+\begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k} \\
+1 & 2 & 3 \\
+1 & 1 & 1 \\
+\end{vmatrix}
+= (-1,2,-1)
+\]
+Plane $\Pi_1$ containing $L_1$ parallel to $\vec{n}$:
+\[
+\begin{vmatrix}
+x & y & z \\
+1 & 2 & 3 \\
+-1 & 2 & -1 \\
+\end{vmatrix}
+= 0 \Rightarrow 4x + y - 2z = 0
+\]
+Plane $\Pi_2$ containing $L_2$ parallel to $\vec{n}$:
+\[
+\begin{vmatrix}
+x-1 & y+1 & z-2 \\
+1 & 1 & 1 \\
+-1 & 2 & -1 \\
+\end{vmatrix}
+= 0 \Rightarrow x - z + 1 = 0
+\]
+Common perpendicular line:
+\[
+\begin{cases}
+4x + y - 2z = 0 \\
+x - z + 1= 0
+\end{cases}
+\]
+Parametric form:
+\boxed{\frac{x}{1} = \frac{y+2}{2} = \frac{z-1}{1}}
+\subsection*{Part 3: Distance Calculation}
+Distance between skew lines:
+\[d = \frac{|(\overrightarrow{P_1P_2} \times \vec{v}_1) \cdot \vec{v}_2|}{|\vec{v}_1 \times \vec{v}_2|} = \frac{5}{\sqrt{6}} = \boxed{\dfrac{5\sqrt{6}}{6}}\]
+
+\newpage
+
+\section{Problem}
+\begin{flalign*}
+& x^2 - 6xy + 10y^2 - 2yz - z^2 + 18 = 0 &
+\end{flalign*}
+Find the extreme points and extreme values of $z = z(x, y)$
+\section*{Solution}
+\[ 2x - 6y - 2y\frac{\partial z}{\partial x} - 2z\frac{\partial z}{\partial x} = 0 \]
+\[ (2y + 2z)\frac{\partial z}{\partial x} = 2x - 6y \]
+\[ \frac{\partial z}{\partial x} = \frac{x - 3y}{y + z} \]
+\[ -6x + 20y - 2z - 2y\frac{\partial z}{\partial y} - 2z\frac{\partial z}{\partial y} = 0 \]
+\[ (2y + 2z)\frac{\partial z}{\partial y} = -6x + 20y - 2z \]
+\[ \frac{\partial z}{\partial y} = \frac{-3x + 10y - z}{y + z} \]
+Set $\frac{\partial z}{\partial x} = 0$ and $\frac{\partial z}{\partial y} = 0$: \\
+$$\frac{x - 3y}{y + z} = 0 \Rightarrow x = 3y$$
+$$\frac{-3x + 10y - z}{y + z} = 0 \Rightarrow -3x + 10y - z = 0$$
+\[ -9y + 10y - z = 0 \Rightarrow y - z = 0 \Rightarrow z = y \]
+$$(9, 3, 3),(-9, -3, -3)$$
+\[ \frac{\partial^2 z}{\partial x^2} = \frac{(1)(y+z) - (x-3y)\frac{\partial z}{\partial x}}{(y+z)^2}=\frac{1}{y+z} \]
+\[ \frac{\partial^2 z}{\partial x \partial y} = \frac{(-3)(y+z) - (x-3y)(1 + \frac{\partial z}{\partial y})}{(y+z)^2}=\frac{-3}{y+z} \]
+\[ \frac{\partial^2 z}{\partial y^2} = \frac{(10 - \frac{\partial z}{\partial y})(y+z) - (-3x+10y-z)(1 + \frac{\partial z}{\partial y})}{(y+z)^2}=\frac{10}{y+z} \]
+For $(9, 3, 3)$:
+\[ A = \frac{\partial^2 z}{\partial x^2} = \frac{1}{6}, \quad B = \frac{\partial^2 z}{\partial x \partial y} = \frac{-3}{6} = -\frac{1}{2}, \quad C = \frac{\partial^2 z}{\partial y^2} = \frac{10}{6} = \frac{5}{3} \]
+\[ AC - B^2 = \left(\frac{1}{6}\right)\left(\frac{5}{3}\right) - \left(-\frac{1}{2}\right)^2 = \frac{5}{18} - \frac{1}{4} = \frac{10}{36} - \frac{9}{36} = \frac{1}{36} > 0 \]
+Since $A > 0$, this is a local minimum.
+For $(-9, -3, -3)$:
+\[ A = \frac{1}{-6} = -\frac{1}{6}, \quad B = \frac{-3}{-6} = \frac{1}{2}, \quad C = \frac{10}{-6} = -\frac{5}{3} \]
+\[ AC - B^2 = \left(-\frac{1}{6}\right)\left(-\frac{5}{3}\right) - \left(\frac{1}{2}\right)^2 = \frac{5}{18} - \frac{1}{4} = \frac{1}{36} > 0 \]
+Since $A < 0$, this is a local maximum.
+\begin{itemize}
+\item A local minimum at \boxed{$(9, 3)$} with value \boxed{$z = 3$}
+\item A local maximum at \boxed{$(-9, -3)$} with value \boxed{$z = -3$}
+\end{itemize}
+
+\newpage
+
+\section{Problem}
+\begin{flalign*}
+\left\{
+\begin{aligned}
+& u = x^2 + y^2 + z^2, & \\
+& z = x^2 + y^2, & \\
+& x + y + z = 4. &
+\end{aligned}
+\right. &&
+\end{flalign*}
+Find the minimum and maximum values of \( u \).
+\section*{Solution}
+\subsection*{Method 1: Substitution}
+Substitute the second equation into the third equation:
+\[ x^2 + x + y^2 + y = 4 \]
+Complete the squares:
+\[ \left(x + \frac{1}{2}\right)^2 + \left(y + \frac{1}{2}\right)^2 = \frac{9}{2} \]
+This represents a circle in the \(xy\)-plane with radius \( \frac{3\sqrt{2}}{2} \).
+Now express \( u \) in terms of \( x \) and \( y \):
+\[ u = x^2 + y^2 + (x^2 + y^2)^2 \]
+Let \( r = x^2 + y^2 \):
+\[ u = r + r^2 \]
+The maximum and minimum occur at the extreme values of \( r \). From the circle equation:
+\[ r_{\text{max}} = \left(\frac{3\sqrt{2}}{2} + \frac{\sqrt{2}}{2}\right)^2 = 8 \]
+\[ r_{\text{min}} = \left(\frac{3\sqrt{2}}{2} - \frac{\sqrt{2}}{2}\right)^2 = 2 \]
+Thus:
+\[ \boxed{u_{\text{min}} = 6} \]
+\[ \boxed{u_{\text{max}} = 72} \]
+
+\newpage
+
+\subsection*{Method 2: Lagrange Multipliers}
+Substitute the second equation into the third:
+\[ x + y + x^2 + y^2 = 4 \]
+Define the Lagrangian:
+\[ \mathcal{L} = x^2 + y^2 + z^2 + \lambda_1(z - x^2 - y^2) + \lambda_2(x + y + z - 4) \]
+Take partial derivatives and set them to zero:
+\begin{align*}
+\frac{\partial \mathcal{L}}{\partial x} &= 2x - 2\lambda_1 x + \lambda_2 = 0 \\
+\frac{\partial \mathcal{L}}{\partial y} &= 2y - 2\lambda_1 y + \lambda_2 = 0 \\
+\frac{\partial \mathcal{L}}{\partial z} &= 2z + \lambda_1 + \lambda_2 = 0 \\
+\frac{\partial \mathcal{L}}{\partial \lambda_1} &= z - x^2 - y^2 = 0 \\
+\frac{\partial \mathcal{L}}{\partial \lambda_2} &= x + y + z - 4 = 0
+\end{align*}
+From the first two equations:
+\[ 2x(1 - \lambda_1) = -\lambda_2 \]
+\[ 2y(1 - \lambda_1) = -\lambda_2 \]
+Thus:
+\[ x = y \quad \text{or} \quad \lambda_1 = 1 \]
+\underline{Case 1: \( x = y \)}
+Substitute \( y = x \) into the constraints:
+\[ z = 2x^2 \]
+\[ 2x + 2x^2 = 4 \]
+\[ x^2 + x - 2 = 0 \]
+Solutions:
+\[ x = 1 \Rightarrow y = 1, z = 2 \]
+\[ x = -2 \Rightarrow y = -2, z = 8 \]
+Calculate \( u \) for these points:
+\[ u(1,1,2) = 1 + 1 + 4 = 6 \]
+\[ u(-2,-2,8) = 4 + 4 + 64 = 72 \]
+\underline{Case 2: \( \lambda_1 = 1 \)}
+From the third equation:
+\[ 2z + 1 + \lambda_2 = 0 \]
+From the first equation with \( \lambda_1 = 1 \):
+\[ \lambda_2 = 0 \]
+\[ z = -\frac{1}{2} \]
+But from \( z = x^2 + y^2 \), \( z \geq 0 \), so no solution in this case.
+Therefore, the extreme values are:
+\[ u_{\text{min}} = 6 \quad \text{at} \quad (1,1,2) \]
+\[ u_{\text{max}} = 72 \quad \text{at} \quad (-2,-2,8) \]
+Both methods yield the same results:
+\[ \boxed{u_{\text{min}} = 6} \]
+\[ \boxed{u_{\text{max}} = 72} \]
+
+\newpage
+
+\section{Problem}
+\begin{flalign*}
+& \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1 &
+\end{flalign*}
+Find the maximum value of the product \( xyz \).
+
+\section*{Solution}
+\subsection*{Method 1: Trigonometric Substitution}
+We can parameterize the variables using spherical coordinates:
+Let:
+$$ x = a \sin \alpha \cos \beta $$
+$$ y = b \sin \alpha \sin \beta $$
+$$ z = c \cos \alpha $$
+where $ 0 \leq \alpha \leq \pi $ and $ 0 \leq \beta \leq 2\pi $.
+The product becomes:
+$$ xyz = (a \sin \alpha \cos \beta)(b \sin \alpha \sin \beta)(c \cos \alpha) = abc \sin^2 \alpha \cos \alpha \sin \beta \cos \beta $$
+Using the double-angle identity:
+$$ \sin \beta \cos \beta = \frac{1}{2} \sin 2\beta $$
+This reaches its maximum when $ \sin 2\beta = 1 $, $ \beta = \frac{\pi}{4} $.
+Now we need to maximize:
+$$ f(\alpha) = \sin^2 \alpha \cos \alpha $$
+Take the derivative:
+$$ f'(\alpha) = 2 \sin \alpha \cos^2 \alpha - \sin^3 \alpha = \sin \alpha (2 \cos^2 \alpha - \sin^2 \alpha) $$
+Set $ f'(\alpha) = 0 $:
+$$ \sin \alpha = 0 \quad \text{or} \quad 2 \cos^2 \alpha - \sin^2 \alpha = 0 $$
+The non-trivial solution is:
+$$ 2 \cos^2 \alpha = \sin^2 \alpha $$
+$$ \tan^2 \alpha = 2 $$
+$$ \alpha = \arctan \sqrt{2} $$
+Substituting back:
+$$ \sin \alpha = \sqrt{\frac{2}{3}}, \quad \cos \alpha = \sqrt{\frac{1}{3}} $$
+$$ f(\alpha) = \left( \frac{2}{3} \right) \left( \frac{1}{\sqrt{3}} \right) = \frac{2}{3\sqrt{3}} $$
+Thus the maximum product is:
+$$ \boxed{\dfrac{abc}{3\sqrt{3}}} $$
+\subsection*{Method 2: Lagrange Multipliers}
+We want to maximize \( f(x,y,z) = xyz \) subject to the constraint \( g(x,y,z) = \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} + \dfrac{z^2}{c^2} - 1 = 0 \).
+The Lagrange condition is:
+\[ \nabla f = \lambda \nabla g \]
+Which gives:
+\[ (yz, xz, xy) = \lambda \left( \frac{2x}{a^2}, \frac{2y}{b^2}, \frac{2z}{c^2} \right) \]
+This leads to the system:
+\begin{align*}
+yz &= \frac{2\lambda x}{a^2} \qquad \tag{1} \\
+xz &= \frac{2\lambda y}{b^2} \qquad \tag{2} \\
+xy &= \frac{2\lambda z}{c^2} \qquad \tag{3} \\
+\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} &= 1 \qquad \tag{4}
+\end{align*}
+Multiply equation (1) by \( x \), equation (2) by \( y \), and equation (3) by \( z \):
+\[ xyz = \frac{2\lambda x^2}{a^2} = \frac{2\lambda y^2}{b^2} = \frac{2\lambda z^2}{c^2} \]
+This implies:
+\[ \frac{x^2}{a^2} = \frac{y^2}{b^2} = \frac{z^2}{c^2} \]
+Let \( \frac{x^2}{a^2} = \frac{y^2}{b^2} = \frac{z^2}{c^2} = k \). From the constraint (4):
+\[ 3k = 1 \Rightarrow k = \frac{1}{3} \]
+Thus:
+\[ x = \frac{a}{\sqrt{3}}, \quad y = \frac{b}{\sqrt{3}}, \quad z = \frac{c}{\sqrt{3}} \]
+The maximum product is:
+\[ xyz = \frac{a}{\sqrt{3}} \cdot \frac{b}{\sqrt{3}} \cdot \frac{c}{\sqrt{3}} = \boxed{\dfrac{abc}{3\sqrt{3}}} \]
+
+\newpage
+
+
+\section{Problem}
+Continuity, Partial Derivatives, Differentiability, Continuity of Partial Derivatives
+\begin{flalign*}
+z = f(x,y) = 
+\begin{cases}
+0, & x^2 + y^2 = 0 \\
+(x^2 + y^2)\sin\left(\frac{1}{\sqrt{x^2 + y^2}}\right), & x^2 + y^2 \neq 0
+\end{cases}&&
+\end{flalign*}
+\section*{Solution}
+\subsection*{(i) Continuity at (0,0)}
+To check continuity at $(0,0)$, we examine:
+$$\lim_{(x,y)\to(0,0)} f(x,y) = \lim_{(x,y)\to(0,0)} (x^2 + y^2)\sin\left(\frac{1}{\sqrt{x^2 + y^2}}\right)
+$$Since $0 \leq |(x^2 + y^2)\sin\left(\frac{1}{\sqrt{x^2 + y^2}}\right)| \leq x^2 + y^2$ and $x^2 + y^2 \to 0$, by the squeeze theorem:
+$$\lim_{(x,y)\to(0,0)} f(x,y) = 0 = f(0,0)$$
+\boxed{\boldsymbol{\checkmark}}
+\subsection*{(ii) Partial Derivatives at (0,0)}
+Using the definition:
+$$f_x(0,0) = \lim_{h\to 0} \frac{f(h,0) - f(0,0)}{h} = \lim_{h\to 0} h\sin\left(\frac{1}{|h|}\right) = 0$$
+$$f_y(0,0) = \lim_{k\to 0} \frac{f(0,k) - f(0,0)}{k} = \lim_{k\to 0} k\sin\left(\frac{1}{|k|}\right) = 0$$
+\boxed{\boldsymbol{\checkmark}}
+\subsection*{(iii) Differentiability at (0,0)}
+Check:
+$$\lim_{(h,k)\to(0,0)} \frac{f(h,k) - f(0,0) - f_x(0,0)h - f_y(0,0)k}{\sqrt{h^2 + k^2}} = \lim_{(h,k)\to(0,0)} \sqrt{h^2 + k^2}\sin\left(\frac{1}{\sqrt{h^2 + k^2}}\right) = 0$$
+\boxed{\boldsymbol{\checkmark}}
+\subsection*{(iv) Continuity of Partial Derivatives}
+For $(x,y) \neq (0,0)$:
+$$f_x(x,y) = 2x\sin\left(\frac{1}{\sqrt{x^2 + y^2}}\right) - \frac{x}{\sqrt{x^2 + y^2}}\cos\left(\frac{1}{\sqrt{x^2 + y^2}}\right)$$
+Along $y=0$ as $x\to 0$:
+$$f_x(x,0) = 2x\sin\left(\frac{1}{|x|}\right) - \text{sgn}(x)\cos\left(\frac{1}{|x|}\right)$$
+\boxed{\boldsymbol{\times}}
+
+\section{Problem}
+Calculate the double integral: $\iint_D \left(x^2 - |x|\arctan y + x^3 e^y\right) dxdy$, $D = \{(x,y) \mid x^2 + y^2 < 1\}$
+\section*{Solution}
+\subsection*{Symmetry Analysis}
+First, we simplify the integral using symmetry properties:
+\begin{itemize}
+    \item The term \( x^3 e^y \) is odd in \( x \) over the symmetric domain \( D \), so its integral vanishes:
+    \[ \iint_D x^3 e^y dxdy = 0 \]
+    \item The term \( -|x|\arctan y \) is odd in \( y \) over the symmetric domain \( D \), so its integral also vanishes:
+    \[ \iint_D -|x|\arctan y dxdy = 0 \]
+\end{itemize}
+Thus, the original integral simplifies to:
+\[ \iint_D x^2 dxdy \]
+\subsection*{Method 1: Polar Coordinates with Wallis' Formula}
+Convert to polar coordinates where \( x = r\cos\theta \), \( y = r\sin\theta \), \( dxdy = r drd\theta \), and \( r \in [0,1] \), \( \theta \in [0,2\pi] \):
+\begin{align*}
+\iint_D x^2 dxdy &= \int_0^{2\pi} \int_0^1 (r\cos\theta)^2 r drd\theta \\
+&= \int_0^{2\pi} \cos^2\theta d\theta \int_0^1 r^3 dr \\
+&= \left[\frac{\theta}{2} + \frac{\sin 2\theta}{4}\right]_0^{2\pi} \cdot \left[\frac{r^4}{4}\right]_0^1 \\
+&= \boxed{\frac{\pi}{4}}
+\end{align*}
+\subsection*{Method 2: Using Rotation Symmetry}
+By the rotation symmetry of the unit disk, we have:
+\[ \iint_D x^2 dxdy = \iint_D y^2 dxdy \]
+Therefore:
+\begin{align*}
+2\iint_D x^2 dxdy &= \iint_D x^2 dxdy + \iint_D y^2 dxdy \\
+&= \iint_D (x^2 + y^2) dxdy \\
+&= \int_0^{2\pi} \int_0^1 r^2 \cdot r drd\theta \\
+&= 2\pi \int_0^1 r^3 dr \\
+&= \frac{\pi}{2}
+\end{align*}
+Thus:
+\[
+\centering
+\boxed{\iint_D \left(x^2 - |x|\arctan y + x^3 e^y\right) dxdy = \frac{\pi}{4}}
+\]
+
+\newpage
+
+\section{Problem}
+A thin plate occupies the closed region D bounded by the parabola \( y = x^2 \) and the line \( y = x \). \\
+The surface density at point \( (x,y) \) is \( \mu(x,y) = x^2 y \). Find the centroid of the thin plate.
+
+\section*{Solution}
+Solve \( x^2 = x \) to get \( (0,0) \) and \( (1,1) \).
+\[m = \iint_D x^2 y \,dA = \int_0^1 \int_{x^2}^x x^2 y \,dy dx = \frac{1}{2} \int_0^1 (x^4 - x^6) \,dx = \frac{1}{35}\]
+\[M_y = \iint_D x \cdot x^2 y \,dA = \frac{1}{2} \int_0^1 (x^5 - x^7) \,dx = \frac{1}{48}\]
+\[M_x = \iint_D y \cdot x^2 y \,dA = \frac{1}{3} \int_0^1 (x^5 - x^8) \,dx = \frac{1}{54}\]
+\[\bar{x} = \frac{M_y}{m} = \frac{35}{48}, \quad \bar{y} = \frac{M_x}{m} = \frac{35}{54}\]
+Thus the centroid is at \boxed{\left( \dfrac{35}{48}, \dfrac{35}{54} \right)}.
+
+\section{Problem}
+$D=\{(x,y)\mid 0\leq y\leq \sin x,\ 0\leq x\leq \pi\}$. Compute:$\iint_D (x^2 + y^2)\,d\sigma$.
+\section*{Solution}
+\[\iint_D (x^2 + y^2)\,d\sigma = \int_0^\pi \left(\int_0^{\sin x} (x^2 + y^2)\,dy\right)dx\]
+\[\int_0^{\sin x} (x^2 + y^2)\,dy = \left[x^2y + \frac{y^3}{3}\right]_0^{\sin x} = x^2\sin x + \frac{\sin^3 x}{3}\]
+\[\int_0^\pi \left(x^2\sin x + \frac{\sin^3 x}{3}\right)dx = \int_0^\pi x^2\sin x\,dx + \frac{1}{3}\int_0^\pi \sin^3 x\,dx \]
+\begin{align*}
+\int_0^\pi x^2\sin x\,dx &= \left[-x^2\cos x\right]_0^\pi + \int_0^\pi 2x\cos x\,dx \\
+&= \pi^2 + 2\left(\left[x\sin x\right]_0^\pi - \int_0^\pi \sin x\,dx\right) \\
+&= \pi^2 - 4
+\end{align*}
+\begin{align*}
+\frac{1}{3}\int_0^\pi \sin^3 x\,dx &= \frac{1}{3}\int_0^\pi \frac{3\sin x - \sin 3x}{4}\,dx \\
+&= \frac{1}{12}\left[-3\cos x + \frac{\cos 3x}{3}\right]_0^\pi \\
+&= \frac{4}{9}
+\end{align*}
+\[\boxed{\iint_D (x^2 + y^2)\,d\sigma =\pi^2 - \frac{32}{9}}\]
+
+\newpage
+
+\section{Problem}
+$D=\{(x,y)|-a\leq x\leq a, -b\leq y\leq b\}$. Compute:$\iint_D e^{\max\{b^2x^2, a^2y^2\}}\,d\sigma$.
+\section*{Solution}
+Divide $D$ into two regions:
+\begin{enumerate}
+\item $D_1 = \{(x,y)\in D | b|x| \geq a|y|\}$
+\item $D_2 = \{(x,y)\in D | b|x| < a|y|\}$
+\end{enumerate}
+In $D_1$: $\max\{b^2x^2, a^2y^2\} = b^2x^2$
+\[\iint_{D_1} e^{b^2x^2}\,d\sigma = 4\int_0^a \int_0^{\frac{bx}{a}} e^{b^2x^2}\,dy\,dx = \frac{4b}{a}\int_0^a xe^{b^2x^2}\,dx\]
+Let $u = b^2x^2$, then $du = 2b^2x\,dx$:
+\[= \frac{2}{ab}\int_0^{a^2b^2} e^u\,du = \frac{2}{ab}(e^{a^2b^2}-1)\]
+Similarly for $D_2$:
+\[\iint_{D_2} e^{a^2y^2}\,d\sigma = \frac{2}{ab}(e^{a^2b^2}-1)\]
+Adding both results:
+\[\iint_D e^{\max\{b^2x^2, a^2y^2\}}\,d\sigma = \boxed{\frac{4}{ab}(e^{a^2b^2}-1)} \]
+
+\section{Problem}
+Let $D = \{(x,y) | x^2 + y^2 \leq r^2\}$.
+ Compute:$\lim_{r \to 0} \frac{\iint_D e^{x^2 - y^2} \cos(x+y) \, d\sigma}{\pi r^2}$
+\section*{Solution}
+Using Taylor expansion near $(0,0)$:
+\begin{align*}
+e^{x^2 - y^2} &\approx 1 + (x^2 - y^2) \\
+\cos(x+y) &\approx 1 - \frac{(x+y)^2}{2}
+\end{align*}
+The integrand becomes approximately $1 + O(x^2 + y^2)$. Thus:
+\[ \iint_D e^{x^2 - y^2} \cos(x+y) \, d\sigma \approx \text{Area}(D) = \pi r^2 \]
+Therefore:
+\[\boxed{ \lim_{r \to 0} \frac{\iint_D e^{x^2 - y^2} \cos(x+y) \, d\sigma}{\pi r^2} = 1} \]
+\newpage
+
+\section{Problem}
+Compute:$ I = \int_{0}^{1} \int_{0}^{1-x} \int_{x+y}^{1} \frac{\sin z}{z} \, dz \, dy \, dx $
+\section*{Solution}
+\subsection*{Method 1: Projection on $yOz$ Plane}
+Change integration order:
+\begin{align*}
+I &= \int_{0}^{1} \int_{0}^{z} \int_{0}^{z-y} \frac{\sin z}{z} \, dx \, dy \, dz \\
+&= \int_{0}^{1} \frac{\sin z}{z} \left( \int_{0}^{z} (z-y) \, dy \right) dz \\
+&= \int_{0}^{1} \frac{\sin z}{z} \cdot \frac{z^2}{2} \, dz \\
+&= \frac{1}{2} \int_{0}^{1} z \sin z \, dz \\
+&= \frac{1}{2} \Big[ -z \cos z + \sin z \Big]_{0}^{1} \\
+&= \boxed{\frac{1}{2} (\sin 1 - \cos 1)}
+\end{align*}
+\subsection*{Method 2: Sequential Reduction}
+Original integral with changed approach:
+\begin{align*}
+I &= \int_{0}^{1} (1-x) \left( \int_{x}^{1} \frac{\sin z}{z} dz \right) dx \\
+&= \int_{0}^{1} \sin x \left(1 - \frac{x}{2}\right) dx \\
+&= \int_{0}^{1} \sin x \, dx - \frac{1}{2} \int_{0}^{1} x \sin x \, dx \\
+&= \Big[ -\cos x \Big]_{0}^{1} - \frac{1}{2} \Big[ -x \cos x + \sin x \Big]_{0}^{1} \\
+&= (1 - \cos 1) - \frac{1}{2} (\sin 1 - \cos 1) \\
+&= \boxed{\frac{1}{2} (\sin 1 - \cos 1)}
+\end{align*}
+
+\newpage
+
+\section{Problem}
+Prove that:$\int_0^1 dx \int_x^1 dy \int_x^y f(x)f(y)f(z)\,dz = \frac{1}{6}\left(\int_0^1 f(t)\,dt\right)^3$
+\section*{Solution}
+Let $ u= F(x) = \int_0^x f(t)\,dt$.
+\[
+\begin{aligned}
+&\int_0^1 f(x)dx \int_x^1 f(y)dy \int_x^y f(z)dz \\
+= &\int_0^1 f(x)dx \int_x^1 f(y)[F(y)-F(x)]dy \\
+= &\int_0^1 f(x)\left[\frac{1}{2}F(y)^2 \bigg|_x^1 - F(x)(F(1)-F(x))\right]dx \\
+= &\int_0^1 f(x)\left[\frac{1}{2}F(1)^2 - \frac{1}{2}F(x)^2 - F(x)F(1) + F(x)^2\right]dx \\
+= &\frac{1}{2}\int_0^1 f(x)[F(1)^2 - 2F(x)F(1) + F(x)^2]dx \\
+= &\frac{1}{2}\int_0^{F(1)} [F(1)^2 - 2uF(1) + u^2]du \\
+= &\frac{1}{2}\left[F(1)^2u - F(1)u^2 + \frac{1}{3}u^3\right]_0^{F(1)} \\
+= &\frac{1}{2}\left(F(1)^3 - F(1)^3 + \frac{1}{3}F(1)^3\right) \\
+= &\frac{1}{6}F(1)^3 \\
+= &\boxed{\frac{1}{6}\left(\int_0^1 f(t)dt\right)^3}
+\end{aligned}
+\]
+
+\newpage
+
+\section{Problem}
+Let the surface $\Sigma$ be the finite part of $z=\frac{1}{2}(x^2+y^2)$ cut by the plane $z=2$. \\
+Evaluate the surface integral $\iint_{\Sigma} z \, dS$. 
+\section*{Solution}
+The surface is $z=\frac{1}{2}(x^2+y^2)$ with $z\leq 2$. In polar coordinates:
+\[ z = \frac{1}{2}r^2, \quad r \leq 2 \]
+The surface element is:
+\[ dS = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} \, dxdy = \sqrt{1 + x^2 + y^2} \, dxdy = \sqrt{1 + r^2} \, rdrd\theta \]
+The integral becomes:
+\[\iint_{\Sigma} z \, dS = \int_0^{2\pi} \int_0^2 \frac{1}{2}r^2 \sqrt{1+r^2} \, r dr d\theta\]
+Let $u=1+r^2$, $du=2rdr$:
+\[= \frac{\pi}{2} \int_1^5 (u-1)\sqrt{u} \, du = \frac{\pi}{2} \left[\frac{2}{5}u^{5/2} - \frac{2}{3}u^{3/2}\right]_1^5 = \boxed{\frac{2\pi(25\sqrt{5}+1)}{15}} \]
+
+\section{Problem}
+Let $\Sigma$ be the outer surface of the sphere $x^2 + y^2 + z^2 = 9$. Evaluate the surface integral $\iint_{\Sigma} z \, dxdy$.
+\section*{Solution}
+\subsection*{Method 1: Divergence Theorem}
+$$\iint_{\Sigma} z \, dxdy = \iiint_{V} \left(\frac{\partial z}{\partial z}\right) dV = \iiint_{V} 1 \, dV = \frac{4}{3}\pi (3)^3 = \boxed{36\pi} $$
+\subsection*{Method 2: Projection Method}
+\begin{align*}
+x &= \beta\cos\alpha \\
+y &= \beta\sin\alpha \\
+dxdy &= \beta\, d\beta d\alpha
+\end{align*}
+$$\alpha \in [0,2\pi] , \beta \in [0,3]$$
+\begin{align*}
+\iint_{\Sigma} z\, dxdy &= \iint_{\text{upper}} z\, dxdy + \iint_{\text{lower}} z\, dxdy \\
+&= \iint_{D} \sqrt{9-x^2-y^2}\, dxdy + \iint_{D} (-\sqrt{9-x^2-y^2})\, dxdy \\
+&= 2\iint_{D} \sqrt{9-x^2-y^2}\, dxdy \\
+&= 2\int_{0}^{2\pi}\!\!\int_{0}^{3} \sqrt{9-\beta^2}\, \beta\, d\beta d\alpha \\
+&= 2\int_{0}^{2\pi} d\alpha \int_{0}^{3} \beta(9-\beta^2)^{1/2}\, d\beta \\
+&= 2 \cdot 2\pi \cdot \left[-\frac{1}{3}(9-\beta^2)^{3/2}\right]_{0}^{3} 
+= \boxed{36\pi}
+\end{align*}
+
+\newpage
+
+\section{Problem}
+Compute the line integral $I = \oint_D xy\,dx + z^2\,dy + zx\,dz$, 
+where $D$ is the intersection curve of $z = \sqrt{x^2 + y^2}$ and $x^2 + y^2 = 2ax$ ($a > 0$),
+oriented counterclockwise when viewed from the positive $z$-axis. 
+\section*{Solution}
+By Stokes' theorem:
+\begin{align*}
+I &= \iint_S (\nabla \times \vec{F}) \cdot d\vec{S}
+\end{align*}
+where $\vec{F} = (xy, z^2, zx)$. \\ 
+Compute the curl:
+\[ \nabla \times \vec{F} = 
+\begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+xy & z^2 & zx
+\end{vmatrix}
+= (-\vec{z}, -\vec{z}, -\vec{x}) \]
+The surface $S$ is the cone $z = \sqrt{x^2 + y^2}$ within the cylinder $x^2 + y^2 = 2ax$. Using cylindrical coordinates:
+\begin{align*}
+x &= r\cos\theta, \quad y = r\sin\theta, \quad z = r \\
+d\vec{S} &= (-z_x, -z_y, 1)\,dxdy = \left(-\frac{x}{z}, -\frac{y}{z}, 1\right)dxdy
+\end{align*}
+The dot product:
+$$(\nabla \times \vec{F}) \cdot d\vec{S} = (-z)\left(-\frac{x}{z}\right) + (-z)\left(-\frac{y}{z}\right) + (-x)(1) = y$$
+Thus:
+\begin{align*}
+I &= \iint_S y\,dxdy
+\end{align*}
+The projection on $xy$-plane is the circle $x^2 + y^2 \leq 2ax$:
+\begin{align*}
+I &= \int_{-\pi/2}^{\pi/2} \int_0^{2a\cos\theta} r\sin\theta \cdot r\,dr d\theta \\
+&= \int_{-\pi/2}^{\pi/2} \sin\theta \left[ \frac{r^3}{3} \right]_0^{2a\cos\theta} d\theta \\
+&= \frac{8a^3}{3} \int_{-\pi/2}^{\pi/2} \sin\theta \cos^3\theta\,d\theta \\
+&= \boxed{\pi a^3}
+\end{align*}
+
+\newpage
+
+\section{Problem}
+Let $\Sigma$ be the lower side of the surface $z = x^2 + y^2$ where $0 \leq z \leq a^2$. \\
+Evaluate the surface integral:$\iint_\Sigma (y - x^2 + z^2) dy dz + (x - z^2 + y^2) dz dx + (z - y^2 + x^2) dx dy$
+\section*{Solution}
+Using Gauss's divergence theorem, we convert the surface integral to a volume integral:
+\[\iiint_V \left( \dfrac{\partial P}{\partial x} + \dfrac{\partial Q}{\partial y} + \dfrac{\partial R}{\partial z} \right) dx dy dz\]
+where $P = y - x^2 + z^2$, $Q = x - z^2 + y^2$, $R = z - y^2 + x^2$.
+Compute the divergence:
+\[\dfrac{\partial P}{\partial x} + \dfrac{\partial Q}{\partial y} + \dfrac{\partial R}{\partial z} = -2x + 2y + 1\]
+By symmetry, the $-2x + 2y$ terms integrate to zero over the circular region. Thus:
+\[\iiint_V 1 \, dx dy dz = \text{Volume} = \int_0^{a^2} \pi z \, dz = \boxed{\dfrac{\pi}{2}a^4}\]
+
+\section{Problem}
+Let $\Sigma$ be the oriented surface $z = x^2 + y^2$ ($0 \leq z \leq 1$), 
+with its normal vector forming an acute angle with the positive z-axis. 
+Evaluate the surface integral:$\iint_\Sigma (2x + z)\,dy\,dz + z\,dx\,dy$
+\section*{Solution}
+Project $\Sigma$ onto the $xy$-plane ($D: x^2 + y^2 \leq 1$). 
+The normal vector is $(-2x, -2y, 1)$, and since the z-component is positive, 
+it satisfies the acute angle condition.
+Convert the integral:
+\[\iint_\Sigma = \iint_D \left[-(2x + z)\frac{\partial z}{\partial x} - z\frac{\partial z}{\partial y} + z\right] dx\,dy\]
+Substitute $z = x^2 + y^2$ and simplify:
+\[\iint_D \left[-(2x + x^2 + y^2)(2x) + (x^2 + y^2)\right] dx\,dy = \iint_D (-4x^2 - 2x^3 - 2xy^2 + x^2 + y^2) dx\,dy\]
+Using polar coordinates:
+\[\int_0^{2\pi} \int_0^1 (-3r^2\cos^2\theta - 2r^3\cos^3\theta - 2r^3\cos\theta\sin^2\theta + r^2\sin^2\theta) r\,dr\,d\theta\]
+Simplify and evaluate:
+\[\int_0^{2\pi} \int_0^1 (-3r^3\cos^2\theta + r^3\sin^2\theta) dr\,d\theta = \boxed{-\frac{\pi}{2}}\]
+
+\newpage
+
+\section{Problem}
+Given $f(0)=0$, $f'(0)=1$, 
+and the equation $[xy(x+y)-f(x)y]dx + [f'(x)+x^2y]dy = 0$ is an exact differential equation. 
+Find its general solution.
+\section*{Solution}
+For exactness, require $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$ where:
+\begin{align*}
+P &= xy(x+y) - f(x)y \\
+Q &= f'(x) + x^2y
+\end{align*}
+Compute partial derivatives:
+\begin{align*}
+\frac{\partial P}{\partial y} &= x^2 + 2xy - f(x) \\
+\frac{\partial Q}{\partial x} &= f''(x) + 2xy
+\end{align*}
+Set them equal:
+\begin{align*}
+x^2 + 2xy - f(x) &= f''(x) + 2xy \\
+f''(x) + f(x) &= x^2
+\end{align*}
+Solve the ODE:
+\begin{align*}
+f(x) &= A\cos x + B\sin x + x^2 - 2 \\
+\text{Using } f(0)=0 &\Rightarrow A=2 \\
+f'(0)=1 &\Rightarrow B=1 \\
+\Rightarrow f(x) &= 2\cos x + \sin x + x^2 - 2
+\end{align*}
+Now integrate the exact equation:
+\begin{align*}
+\frac{\partial F}{\partial x} &= xy^2 + (2\cos x + \sin x - 2)y \\
+\frac{\partial F}{\partial y} &= -\sin x + 2\cos x + x^2y + x^2 - 2
+\end{align*}
+Integrate to find $F(x,y)$:
+$$F(x,y) = \frac{x^2y^2}{2} + 2y\sin x - y\cos x - 2xy + g(y)
+= \boxed{2y\sin x - y\cos x + \frac{x^2y^2}{2} - 2xy + C}$$
+
+\newpage
+
+\section{Problem}
+Given $f(0)=\frac{1}{2}$ and the integral $\int_L [e^x + f(x)]y\,dx - f(x)\,dy$ is path-independent. \\
+Find the value from $(0,0)$ to $(1,1)$.
+\section*{Solution}
+Since the integral is path-independent, we have:
+\[\frac{\partial}{\partial y}[e^x + f(x)]y = \frac{\partial}{\partial x}[-f(x)] \Rightarrow e^x + f(x) = -f'(x)\]
+Solve the ODE $f'(x) + f(x) = -e^x$ with $f(0)=\frac{1}{2}$:
+\[f(x) = -\frac{1}{2}e^x + \frac{1}{e^x}\]
+Choose path $(0,0)\to(1,0)\to(1,1)$:
+\[\int_0^1 0\,dx + \int_0^1 -f(1)\,dy = -f(1) = \boxed{\frac{1}{2}e - \frac{1}{e}}\]
+
+\section{Problem}
+For all smooth oriented closed surfaces $\Sigma$ in the half-space $x>0$, the surface integral satisfies:
+$\iint\limits_{\Sigma} xf(x)dydz - xyf(x)dzdx - e^{2x}zdxdy = 0$,
+Given $\lim\limits_{x\to 0^+} f(x) = 1$, find $f(x)$.
+\section*{Solution}
+By Gauss's divergence theorem, for any closed surface $\Sigma$:
+\[\iiint\limits_V \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \right) dxdydz = 0\]
+where $P = xf(x)$, $Q = -xyf(x)$, $R = -e^{2x}z$. This gives:
+\[\frac{\partial}{\partial x}(xf(x)) + \frac{\partial}{\partial y}(-xyf(x)) + \frac{\partial}{\partial z}(-e^{2x}z) = 0\]
+Simplifying:
+\[f(x) + xf'(x) - xf(x) - e^{2x} = 0\]
+\[f'(x) + \left(\frac{1}{x}-1\right)f(x) = \frac{e^{2x}}{x}\]
+Using the standard solution formula $y' + p(x)y = q(x)$:
+\begin{align*}
+\text{Integrating factor: } \mu(x) &= e^{\int p(x)dx} = e^{\int \left(\frac{1}{x}-1\right)dx} = e^{\ln x - x} = xe^{-x} \\
+\text{Solution: } f(x) &= \frac{1}{\mu(x)}\left(\int \mu(x)q(x)dx + C\right) \\
+&= \frac{e^x}{x}\left(\int xe^{-x}\cdot\frac{e^{2x}}{x}dx + C\right) \\
+&= \frac{e^x}{x}\left(\int e^x dx + C\right) \\
+&= \frac{e^x}{x}(e^x + C)
+\end{align*}
+Applying the initial condition $\lim\limits_{x\to 0^+} f(x) = 1$:
+$\lim_{x\to 0^+} \frac{e^x(e^x + C)}{x} = 1 \Rightarrow C = -1$ \\
+Thus the solution is:
+\[f(x) = \boxed{\dfrac{e^x(e^x - 1)}{x}}\]
+
+\newpage
+
+\section{Problem}
+Compute the surface integral $I = \iint_\Sigma x^2 dS$, \\
+where $\Sigma$ is the part of the cylinder $x^2 + y^2 = a^2$ between $z=0$ and $z=h$ ($h>0$).
+\section*{Solution}
+\subsection*{Method 1: Using Symmetry}
+\begin{align*}
+I &= \iint_\Sigma x^2 dS \\
+&= \frac{1}{2}\iint_\Sigma (x^2 + y^2) dS \quad \text{(by symmetry)} \\
+&= \frac{a^2}{2}\iint_\Sigma dS \\
+&= \frac{a^2}{2} \times 2\pi a h \\
+&= \boxed{\pi a^3 h}
+\end{align*}
+\subsection*{Method 2: Projection onto yOz-plane}
+\begin{align*}
+I &= \iint_\Sigma x^2 dS \\
+&= \int_0^{2\pi} \int_0^h a^2\cos^2\theta \cdot \frac{a}{|\sin\theta|} dz d\theta 
+    \quad \text{(parameterizing $x=a\cos\theta$)} \\
+&= a^3 h \int_0^{2\pi} \frac{\cos^2\theta}{|\sin\theta|} d\theta \\
+&= 4a^3 h \int_0^{\pi/2} \cot\theta \cos\theta d\theta \quad \text{(by symmetry)} \\
+&= \boxed{\pi a^3 h}
+\end{align*}
+\subsection*{Method 3: Cylindrical Coordinates Parameterization}
+\begin{align*}
+I &= \iint_\Sigma x^2 dS \\
+&= \int_0^h \int_0^{2\pi} (a\cos\theta)^2 \cdot a \, d\theta dz \quad \text{($dS = a d\theta dz$ on cylinder)} \\
+&= a^3 \int_0^h dz \int_0^{2\pi} \cos^2\theta \, d\theta \\
+&= a^3 h \int_0^{2\pi} \frac{1 + \cos 2\theta}{2} d\theta \\
+&= \frac{a^3 h}{2} \left[ \theta + \frac{\sin 2\theta}{2} \right]_0^{2\pi} \\
+&= \frac{a^3 h}{2} \cdot 2\pi \\
+&= \boxed{\pi a^3 h}
+\end{align*}
+
+\newpage
+\section{Problem}
+Let $\Sigma$ be the part of $z = x^2 + y^2$ below $z = 1$. Compute the surface integral $I = \iint_\Sigma |xyz| \, dS$. 
+\section*{Solution}
+Using polar coordinates:
+\begin{align*}
+z &= x^2 + y^2 = r^2 \\
+dS &= \sqrt{1 + 4r^2} \, r \, dr \, d\theta \\
+I &= \int_0^{2\pi} \int_0^1 |r^3 \cos\theta \sin\theta| \cdot r^2 \sqrt{1 + 4r^2} \, dr \, d\theta \\
+&= \left(\int_0^{2\pi} |\cos\theta \sin\theta| \, d\theta\right) \left(\int_0^1 r^5 \sqrt{1 + 4r^2} \, dr\right) \\
+&= \frac{1}{4} \int_0^1 u^2 \sqrt{1 + 4u} \, du \quad (u = r^2) \\
+&= \boxed{\frac{1}{4}\left(\frac{25\sqrt{5}}{21} - \frac{1}{105}\right)}
+\end{align*}
+
+\section{Problem}
+Prove that $(yz e^{xyz} + 2x)dx + (zx e^{xyz} + 3y^2)dy + (xy e^{xyz} + 4z^3)dz$ is an exact differential, \\
+and find its potential function. 
+\section*{Solution}
+\begin{align*}
+\frac{\partial P}{\partial y} &= e^{xyz}(1 + xyz) = \frac{\partial Q}{\partial x} \\
+\frac{\partial P}{\partial z} &= e^{xyz}(1 + xyz) = \frac{\partial R}{\partial x} \\
+\frac{\partial Q}{\partial z} &= e^{xyz}(1 + xyz) = \frac{\partial R}{\partial y}
+\end{align*}
+Find the potential function $U$:
+\begin{align*}
+U &= \int P \, dx \\
+  &= \int (yz e^{xyz} + 2x) \, dx \\
+  &= e^{xyz} + x^2 + f(y,z) \\
+\frac{\partial U}{\partial y} &= zx e^{xyz} + f_y = Q \\
+  &\Rightarrow f_y = 3y^2 \\
+  &\Rightarrow f(y,z) = y^3 + g(z) \\
+\frac{\partial U}{\partial z} &= xy e^{xyz} + g'(z) = R \\
+  &\Rightarrow g'(z) = 4z^3 \\
+  &\Rightarrow g(z) = z^4 + C
+\end{align*}
+Thus, the potential function is:
+\[\boxed{x^2 + y^3 + z^4 + e^{xyz} + C}\]
+
+\newpage
+
+\section{Problem}
+Find the limit:
+$\lim_{t \to 0} \frac{1}{\pi t^4} \iiint_{x^2+y^2+z^2 \leq t^2} f\left(\sqrt{x^2+y^2+z^2}\right) \, dv$
+\section*{Solution}
+Using spherical coordinates ($r = \sqrt{x^2+y^2+z^2}$):
+\[\text{Integral} = 4\pi \int_0^t f(r) r^2 \, dr\]
+For $f(0) \neq 0$, the limit becomes $\infty$. For $f(0) = 0$:
+\[\text{Limit} = \lim_{t \to 0} \frac{4\pi \int_0^t f(r) r^2 \, dr}{\pi t^4} 
+= \lim_{t \to 0} \frac{f(t) t^2}{t^3} = f'(0)\]
+Final answer: 
+\boxed{\begin{cases}
+f'(0), & f(0)=0 \\
+\infty, & f(0)\neq 0
+\end{cases}}
+
+\section{Problem}
+Evaluate:$\lim_{n\to\infty} \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{n}{(n+i)(n^2+j^2)}$
+\section*{Solution}
+We can rewrite the expression as a double Riemann sum:
+\begin{align*}
+&\lim_{n\to\infty} \sum_{i=1}^{n}\sum_{j=1}^{n} \frac{n}{(n+i)(n^2+j^2)} \\
+&= \lim_{n\to\infty} \frac{1}{n} \sum_{i=1}^{n} \frac{1}{1+\frac{i}{n}} \cdot \frac{1}{n} \sum_{j=1}^{n} \frac{1}{1+\left(\frac{j}{n}\right)^2} \quad \text{(Factoring the expression)} \\
+&= \left( \lim_{n\to\infty} \frac{1}{n} \sum_{i=1}^{n} \frac{1}{1+\frac{i}{n}} \right) \left( \lim_{n\to\infty} \frac{1}{n} \sum_{j=1}^{n} \frac{1}{1+\left(\frac{j}{n}\right)^2} \right) \quad \text{(Separating the limits)} \\
+&= \left( \int_0^1 \frac{dx}{1+x} \right) \left( \int_0^1 \frac{dy}{1+y^2} \right) \quad \text{(Recognizing Riemann sums)} \\
+&= \left[ \ln(1+x) \right]_0^1 \cdot \left[ \arctan y \right]_0^1 \quad \text{(Evaluating integrals)} \\
+&= (\ln 2 - \ln 1) \cdot \left( \frac{\pi}{4} - 0 \right) \\
+&= \boxed{\dfrac{\pi \ln 2}{4}}
+\end{align*}
+
+\newpage
+
+\section{Problem}
+Given $r=\sqrt{x^2+y^2+z^2}$, $\Sigma$ is the outer surface of the sphere $x^2+y^2+z^2=a^2$. \\
+Evaluate: $\iint_\Sigma \frac{x\,dy\,dz + y\,dz\,dx + z\,dx\,dy}{r^3}$
+\section*{Solution}
+\subsection*{Method 1: Gauss's Divergence Theorem}
+Let $\vec{F} = \left(\frac{x}{r^3}, \frac{y}{r^3}, \frac{z}{r^3}\right)$. The divergence is:
+\[\nabla \cdot \vec{F} = \frac{3}{r^3} - \frac{3(x^2+y^2+z^2)}{r^5} = 0 \quad (r \neq 0)\]
+Since $\vec{F}$ is singular at the origin, 
+we consider a small sphere $\Sigma_\epsilon$ of radius $\epsilon$ around the origin. By the divergence theorem:
+\[\iint_\Sigma \vec{F}\cdot d\vec{S} = 
+\iiint_{V} (\nabla \cdot \vec{F}) dV + \iint_{\Sigma_\epsilon} \vec{F}\cdot d\vec{S} = \boxed{4\pi}\]
+\subsection*{Method 2: Symmetry and Rotation}
+By symmetry, the three terms contribute equally:
+\[\iint_\Sigma \frac{x\,dy\,dz}{r^3} = \iint_\Sigma \frac{y\,dz\,dx}{r^3} = \iint_\Sigma \frac{z\,dx\,dy}{r^3}\]
+On $\Sigma$, $r=a$, so we evaluate one component:
+\[\iint_\Sigma \frac{z\,dx\,dy}{a^3} = \frac{1}{a^3}\iint_{D} 2a\,dx\,dy = \frac{2}{a^2} \cdot \pi a^2 = 2\pi\]
+where $D$ is the projection. Total integral is $3 \times \frac{4\pi}{3}$: \boxed{4\pi}
+\subsection*{Method 3: Surface Area Integral}
+Parameterize using spherical coordinates (with $\alpha$ and $\beta$):
+\[\vec{r}(\alpha,\beta) = a(\sin\alpha\cos\beta, \sin\alpha\sin\beta, \cos\alpha)\]
+The normal vector is $\vec{n} = a^2\sin\alpha(\sin\alpha\cos\beta, \sin\alpha\sin\beta, \cos\alpha)$. Then:
+\[\vec{F}\cdot \vec{n} = \frac{a^3\sin\alpha}{a^3} = \sin\alpha\]
+Integrating over $0\leq\alpha\leq\pi$, $0\leq\beta\leq2\pi$:
+\[\int_0^{2\pi}\int_0^\pi \sin\alpha \, d\alpha d\beta = \boxed{4\pi}\]
+
+\newpage
+
+\section{Problem}
+Compute the triple integral $\iiint_\Omega z\,dx\,dy\,dz$ ,\\
+where $\Omega$ is the region bounded by the cone $z=(h/R)\sqrt{x^2+y^2}$ and the plane $z=h$ ($R>0$, $h>0$).
+
+\section*{Solution}
+
+\subsection*{Method 1: Eliminating z}
+The region $\Omega$ can be described as:
+\[ \frac{h}{R}\sqrt{x^2+y^2} \leq z \leq h \]
+Projection on $xy$-plane is $x^2+y^2 \leq R^2$.
+
+\begin{align*}
+\int_{-R}^R \int_{-\sqrt{R^2-x^2}}^{\sqrt{R^2-x^2}} \int_{(h/R)\sqrt{x^2+y^2}}^h z\,dz\,dy\,dx 
+&= \frac{1}{2}\int_{-R}^R \int_{-\sqrt{R^2-x^2}}^{\sqrt{R^2-x^2}} \left[h^2 - \frac{h^2}{R^2}(x^2+y^2)\right] dy\,dx \\
+&= \frac{h^2}{2R^2}\int_0^{2\pi} \int_0^R (R^2-r^2)r\,dr\,d\theta \\
+&= \frac{h^2}{2R^2}\cdot 2\pi \cdot \frac{R^4}{4} = \boxed{\frac{1}{4}\pi R^2 h^2}
+\end{align*}
+
+\subsection*{Method 2: Cross-section at height z}
+At height $z$, the cross-section is a disk with radius $r = (R/h)z$.
+
+\begin{align*}
+\int_0^h z \left[\iint_{x^2+y^2 \leq (Rz/h)^2} dx\,dy\right] dz 
+&= \int_0^h z \left[\pi \left(\frac{Rz}{h}\right)^2\right] dz \\
+&= \frac{\pi R^2}{h^2} \int_0^h z^3 dz = \boxed{\frac{1}{4}\pi R^2 h^2}
+\end{align*}
+
+\subsection*{Method 3: Spherical Coordinates}  
+\[ \alpha \in [0, 2\pi], \quad \beta \in \left[0, \arctan\left(\frac{R}{h}\right)\right], \quad \rho \in \left[0, \frac{h}{\cos \beta}\right], \]  
+\begin{align*}  
+\iiint_\Omega z \,dx\,dy\,dz  
+&= \int_0^{2\pi} \int_0^{\arctan(R/h)} \int_0^{h \sec \beta} (\rho \cos \beta) \cdot \rho^2 \sin \beta \,d\rho\,d\beta\,d\alpha \\  
+&= 2\pi \int_0^{\arctan(R/h)} \cos \beta \sin \beta \left( \int_0^{h \sec \beta} \rho^3 \,d\rho \right) d\beta \\  
+&= 2\pi \int_0^{\arctan(R/h)} \cos \beta \sin \beta \left( \frac{h^4 \sec^4 \beta}{4} \right) d\beta \\  
+&= \frac{\pi h^4}{2} \int_0^{\arctan(R/h)} \tan \beta \sec^2 \beta \,d\beta \\  
+&= \frac{\pi h^4}{2} \left[ \frac{\tan^2 \beta}{2} \right]_0^{\arctan(R/h)} \\  
+&= \frac{\pi h^4}{4} \left( \frac{R^2}{h^2} \right) \\
+&= \boxed{\frac{1}{4} \pi R^2 h^2}  
+\end{align*}  
+
+\newpage
+
+\section{Problem}
+Find the sum:$S = \sum_{n=0}^{\infty} \frac{(-1)^n (n^2 - n + 1)}{2^n}$
+\section*{Solution}
+Decompose the general term:
+$$\frac{(-1)^n (n^2 - n + 1)}{2^n} = (-1)^n \frac{n^2}{2^n} - (-1)^n \frac{n}{2^n} + \left(-\frac{1}{2}\right)^n$$
+Compute each series separately:
+\begin{align*}
+\sum_{n=0}^{\infty} \left(-\frac{1}{2}\right)^n &= \frac{1}{1 + \frac{1}{2}} = \frac{2}{3} \\
+\sum_{n=0}^{\infty} (-1)^n \frac{n}{2^n} &= \frac{-\frac{1}{2}}{(1 + \frac{1}{2})^2} = -\frac{2}{9} \\
+\sum_{n=0}^{\infty} (-1)^n \frac{n^2}{2^n} &= \frac{-\frac{1}{2}(1 - \frac{1}{2})}{(1 + \frac{1}{2})^3} = -\frac{2}{27}
+\end{align*}
+$$S = -\frac{2}{27} - \left(-\frac{2}{9}\right) + \frac{2}{3} = \boxed{\frac{22}{27}}$$
+
+\section{Problem}
+Expansion of $ f(x) = \cos x $ as a Sine Series on $[0, \pi]$
+\section*{Solution}
+We perform an odd extension of $f(x)$ to $[-\pi, \pi]$:
+$$f_{\text{odd}}(x) = 
+\begin{cases}
+\cos x, & 0 \leq x \leq \pi \\
+-\cos(-x), & -\pi \leq x < 0
+\end{cases}
+$$
+The sine series coefficients are:
+$$b_n = \frac{2}{\pi} \int_0^\pi \cos x \sin(nx) \, dx$$
+Using the identity $\cos x \sin(nx) = \frac{1}{2}[\sin(n+1)x + \sin(n-1)x]$:
+$$b_n = \frac{1}{\pi} \left[ \int_0^\pi \sin(n+1)x \, dx + \int_0^\pi \sin(n-1)x \, dx \right]$$
+Evaluating the integrals:
+$$b_n = \frac{1}{\pi} \left[ \frac{1 - (-1)^{n+1}}{n+1} + \frac{1 - (-1)^{n-1}}{n-1} \right]$$
+For $n=1$:
+$$b_1 = \frac{2}{\pi} \int_0^\pi \cos x \sin x \, dx = \frac{1}{\pi} \int_0^\pi \sin(2x) \, dx = 0$$
+For $n \geq 2$:
+$$b_n = \frac{2n[1 + (-1)^n]}{\pi(n^2 - 1)}$$
+Only even $n$ terms remain ($n=2,4,6,\ldots$). The final expansion is:
+$$\boxed{\cos x = \sum_{k=1}^\infty \frac{4k}{\pi(4k^2 - 1)} \sin(2kx)}$$
+
+\newpage
+
+\section{Problem}
+If the series $\sum_{n=1}^{\infty} a_n$ converges, \\
+provide counterexamples showing that the following series may not converge:
+\begin{enumerate}[(i)]
+    \item $\displaystyle\sum_{n=1}^{\infty} |a_n|$
+    \item $\displaystyle\sum_{n=1}^{\infty} (-1)^n a_n$
+    \item $\displaystyle\sum_{n=1}^{\infty} a_n a_{n+1}$
+\end{enumerate}
+\section*{Solution}
+\begin{enumerate}
+    \item For $\boxed{a_n = \dfrac{(-1)^n}{n}}$: $\sum_{n=1}^{\infty} |a_n| = \sum_{n=1}^{\infty} \dfrac{1}{n}$ diverges.
+    \item For $\boxed{a_n = \dfrac{(-1)^n}{n}}$: $\sum_{n=1}^{\infty} (-1)^n a_n = \sum_{n=1}^{\infty} \dfrac{1}{n}$ diverges.
+    \item For $\boxed{a_n = \dfrac{(-1)^n}{\sqrt{n}}}$: $\sum_{n=1}^{\infty} a_n a_{n+1} = -\sum_{n=1}^{\infty} \dfrac{1}{\sqrt{n(n+1)}}$ diverges since $\dfrac{1}{\sqrt{n(n+1)}} \geq \dfrac{1}{2n}$.
+\end{enumerate}
+
+
+\section{Problem}
+Evaluate the limit:$\lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} \frac{1}{3^k} \left(1+\frac{1}{k}\right)^{k^2}$
+\section*{Solution}
+We have:
+\[\lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} \frac{1}{3^k} \left(1+\frac{1}{k}\right)^{k^2} \leq \lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^{n} \left(\frac{e}{3}\right)^k = \lim_{n\to\infty} \frac{C}{n} = \boxed{0}\]
+where we used $\left(1+\frac{1}{k}\right)^{k^2} \leq e^k$ and $C = \sum_{k=1}^{\infty} \left(\frac{e}{3}\right)^k < \infty$ since $\frac{e}{3} < 1$.
+
+\section{Problem}
+Given the function \( f(x) = \dfrac{2x^2}{1 + x^2} \), find the value of the 6th derivative at zero: \( f^{(6)}(0) \)
+\section*{Solution}
+First, expand \( f(x) \) as a power series:
+\[ \frac{1}{1 + x^2} = \sum_{n=0}^{\infty} (-1)^n x^{2n} \]
+Thus,
+\[ f(x) = 2x^2 \sum_{n=0}^{\infty} (-1)^n x^{2n} = 2 \sum_{n=0}^{\infty} (-1)^n x^{2n + 2} \]
+The coefficient of \( x^6 \) is \( 2(-1)^2 = 2 \). Therefore:
+\[ \frac{f^{(6)}(0)}{6!} = 2 \implies f^{(6)}(0) = \boxed{2 \cdot 6!} \]
+
+\newpage
+
+\section{Problem}
+Find the sum function of the power series:$\sum_{n=2}^{\infty} \frac{x^n}{n^2-1}$
+\section*{Solution}
+\begin{align*}
+S(x) &= \sum_{n=2}^{\infty} \frac{x^n}{n^2-1} \\
+&= \frac{1}{2}\sum_{n=2}^{\infty}\left(\frac{x^n}{n-1} - \frac{x^n}{n+1}\right) \quad \text{(Partial fractions)} \\
+&= \frac{x}{2}\sum_{k=1}^{\infty}\frac{x^k}{k} - \frac{1}{2x}\sum_{m=3}^{\infty}\frac{x^m}{m} \quad \text{(Index shift)} \\
+&= -\frac{x}{2}\ln(1-x) + \frac{1}{2x}\left(\ln(1-x) + x + \frac{x^2}{2}\right) \quad \text{(Series for $\ln(1-x)$)} \\
+&= \frac{x+2}{4} + \frac{\ln(1-x)}{2x}(1-x^2) \quad \text{(Simplified form)}
+\end{align*}
+\[\boxed{\sum_{n=2}^{\infty} \frac{x^n}{n^2-1} = 
+\begin{cases}
+\frac{x+2}{4} + \frac{1-x^2}{2x}\ln(1-x) & \text{otherwise} \\
+0, & x=0 
+\end{cases}}\]
+
+\section{Problem}
+Expand the function $ f(x) = \frac{1}{4}\ln\left(\frac{1+x}{1-x}\right) + \frac{1}{2}\arctan x - x $ into a power series of $ x $:
+\section*{Solution}
+$$ \ln(1+x) = \sum_{k=1}^{\infty} (-1)^{k+1} \frac{x^k}{k}, \quad \text{for } |x| < 1 $$
+$$ \ln(1-x) = -\sum_{k=1}^{\infty} \frac{x^k}{k}, \quad \text{for } |x| < 1 $$
+$$ \ln\left(\frac{1+x}{1-x}\right) = \ln(1+x) - \ln(1-x) = \sum_{k=1}^{\infty} \left[ (-1)^{k+1} + 1 \right] \frac{x^k}{k} = 2\sum_{n=0}^{\infty} \frac{x^{2n+1}}{2n+1} $$
+$$ \arctan x = \sum_{m=0}^{\infty} (-1)^m \frac{x^{2m+1}}{2m+1}, \quad \text{for } |x| \leq 1 $$
+$$ f(x) = \frac{1}{2}\sum_{n=0}^{\infty} \frac{x^{2n+1}}{2n+1} + \frac{1}{2}\sum_{m=0}^{\infty} (-1)^m \frac{x^{2m+1}}{2m+1} - x $$
+Notice that the $-x$ term cancels with the $n=0$ and $m=0$ terms from the series.\\
+$$ f(x) = \frac{1}{2}\sum_{k=1}^{\infty} \left[ 1 + (-1)^k \right] \frac{x^{2k+1}}{2k+1} $$
+The term $1 + (-1)^k$ is non-zero only when $k$ is even. Let $k = 2n$:
+$$ f(x) = \frac{1}{2}\sum_{n=1}^{\infty} 2 \cdot \frac{x^{4n+1}}{4n+1} = \boxed{\sum_{n=1}^{\infty} \frac{x^{4n+1}}{4n+1}} $$
+
+\newpage
+
+\section{Problem}
+\[\sum_{n=1}^\infty \frac{x^{n+1}}{n(n+1)}\]
+\section*{Solution}
+\setcounter{equation}{0}
+\begin{gather}
+\lim_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right| = \lim_{n\to\infty} \frac{n}{n+2} = 1 \quad \Rightarrow \quad R = 1 \\
+x=1: \sum_{n=1}^\infty \frac{1}{n(n+1)} \text{ converges} \\
+x=-1: \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n(n+1)} \text{ converges} \\
+\text{Thus } x \in [-1,1] \\
+S(x) = \sum_{n=1}^\infty \frac{x^{n+1}}{n(n+1)} = x\sum_{n=1}^\infty \frac{x^n}{n(n+1)} \\
+\text{Let } f(x) = \sum_{n=1}^\infty \frac{x^n}{n(n+1)} \\
+f'(x) = \sum_{n=1}^\infty \frac{x^{n-1}}{n+1} = \frac{1}{x^2}\sum_{n=2}^\infty \frac{x^n}{n} = \frac{1}{x^2}\left(-\ln(1-x)-x\right) \\
+f(x) = \int \frac{-\ln(1-x)-x}{x^2}dx = (1-x)\ln(1-x) + x \\
+\Rightarrow S(x) = x[(1-x)\ln(1-x) + x] \quad \text{for } x\in[-1,1) \\
+\text{At } x=1: 
+\lim_{x\to1^-}S(x) = \sum_{n=1}^\infty \frac{1}{n(n+1)} = \lim_{N\to\infty}\left(1-\frac{1}{N+1}\right) = 1 \\
+\boxed{
+S(x) = \begin{cases}
+x + x(1-x)\ln(1-x), & x\in[-1,1) \\
+1, & x=1
+\end{cases}
+}
+\end{gather}
+
+\newpage
+
+\section{Problem}
+Prove convergence of $\sum_{n=1}^\infty \int_{n\pi}^{(n+1)\pi} \frac{\sin x}{x}dx$.
+\section*{Solution}
+\subsection*{Method 1: Alternating Series Test}
+Let $I_n = \int_{n\pi}^{(n+1)\pi} \frac{\sin x}{x}dx$. Since $\frac{1}{(n+1)\pi} \leq \frac{1}{x} \leq \frac{1}{n\pi}$ on $[n\pi,(n+1)\pi]$, we have:
+\begin{itemize}
+    \item For even $n$, $\sin x \leq 0$ $\Rightarrow$ $I_n \leq 0$
+    \item For odd $n$, $\sin x \geq 0$ $\Rightarrow$ $I_n \geq 0$
+\end{itemize}
+The series alternates in sign. We estimate $|I_n| \leq \frac{1}{n\pi}\int_{n\pi}^{(n+1)\pi}|\sin x|dx = \frac{2}{n\pi}$. \\
+Since $\frac{2}{n\pi}$ decreases to 0, by the Alternating Series Test.\\
+\begin{equation*}
+    \boxed{\sum I_n \text{ converges}}
+\end{equation*}
+\subsection*{Method 2: Absolute Convergence via Comparison}
+We show $\sum |I_n|$ converges. Note that:
+$$|I_n| \leq \int_{n\pi}^{(n+1)\pi}\frac{|\sin x|}{x}dx \leq \frac{1}{n\pi}\int_{n\pi}^{(n+1)\pi}|\sin x|dx = \frac{2}{n\pi}$$
+Since $\sum_{n=1}^\infty \frac{2}{n\pi} = \frac{2}{\pi}\sum_{n=1}^\infty \frac{1}{n}$ diverges, this approach fails. Instead, consider:
+$$|I_n| \leq \int_{n\pi}^{(n+1)\pi}\frac{|\sin x|}{x}dx \leq \frac{1}{n\pi}\int_{0}^{\pi}|\sin u|du = \frac{2}{n\pi}$$
+While this gives the same bound, we can improve the estimate by integration by parts:
+$$I_n = \left.-\frac{\cos x}{x}\right|_{n\pi}^{(n+1)\pi} - \int_{n\pi}^{(n+1)\pi}\frac{\cos x}{x^2}dx$$
+The boundary terms telescope and the remaining integral is absolutely convergent since $\left|\frac{\cos x}{x^2}\right| \leq \frac{1}{x^2}$.\\
+\begin{equation*}
+    \boxed{\sum I_n \text{ converges}}
+\end{equation*}
+\subsection*{Method 3: Taylor Expansion}
+Let $I_n = \int_{n\pi}^{(n+1)\pi} \frac{\sin x}{x}dx$. Substitute $x = n\pi + t$:
+$$I_n = (-1)^n \int_0^\pi \frac{\sin t}{n\pi + t} dt
+$$Expand $\sin t$ and $(n\pi + t)^{-1}$:
+$$\frac{\sin t}{n\pi + t} = \frac{t - \frac{t^3}{6} + \cdots}{n\pi}\left(1 - \frac{t}{n\pi} + \frac{t^2}{(n\pi)^2} - \cdots\right)$$
+$$I_n \approx (-1)^n \left[\frac{\pi}{2n} - \frac{\pi}{3n^2} + O\left(\frac{1}{n^3}\right)\right]$$
+The series $\sum I_n$ converges as:
+\begin{itemize}
+\item $\sum (-1)^n \frac{\pi}{2n}$ converges (alternating series)
+\item $\sum \frac{1}{n^2}$ and higher order terms converge absolutely
+\end{itemize}
+\begin{equation*}
+    \boxed{\sum I_n \text{ converges}}
+\end{equation*}
+
+\end{document}

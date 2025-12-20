@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\begin{document}
+
+\section{Derivative}
+
+\subsection{}
+\begin{equation}
+f(x) = \frac{1}{\ln(1+x)} - \frac{1}{x}, \quad x \in [0,1], \quad \lambda = \max_{x \in [0,1]} f(x), \quad \mu = \min_{x \in [0,1]} f(x)
+\end{equation}
+
+\subsection{}
+Assume \( f(x) \) has continuous second-order derivatives on \([a,b]\). Prove that:
+\begin{equation}
+\lim_{n \to \infty} n^{2} \left[ \int_{a}^{b} f(x) \, \mathrm{d}x - \frac{b-a}{n} \sum_{k=1}^{n} f \left( a + \frac{2k-1}{2n}(b-a) \right) \right] = \frac{(b-a)^{2}}{24} \left[ f^{\prime}(b) - f^{\prime}(a) \right]
+\end{equation}
+
+\section{Limitation}
+
+\subsection{}
+\begin{equation}
+I = \lim_{x \to 0} \frac{\ln(\cos x)}{x^2}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+I = \lim_{x \to 0} \frac{\ln(\cos x + x \sin 2x)}{e^{x^{2}} - \sqrt[3]{1 - x^{2}}}
+\end{equation}
+
+\section{Integral}
+
+\subsection{}
+\begin{equation}
+I = \int \sec x \, \mathrm{d}x
+\end{equation}
+
+\subsection{}
+\begin{equation}
+I = \int \frac{\mathrm{d}x}{x^2 + a^2}
+\end{equation}
+
+\subsection{}
+\begin{equation}
+I = \int \frac{\mathrm{d}x}{\sqrt{x^2 + a^2}}
+\end{equation}
+
+\section{Trigonometric and Multiple Integrals}
+
+\subsection{}
+Let \( D = \{(x,y) \mid x^{2} + y^{2} \leq \pi\} \), compute:
+\begin{equation}
+I = \iint_{D} \left[ \sin(x^{2}) \cos(y^{2}) + x \sqrt{x^{2} + y^{2}} \right] \, \mathrm{d}x \, \mathrm{d}y
+\end{equation}
+
+\subsection{}
+Compute the surface integral:
+\begin{equation}
+I = \iint_{S} (x^{2} - x) \, \mathrm{d}y \, \mathrm{d}z + (y^{2} - y) \, \mathrm{d}z \, \mathrm{d}x + (z^{2} - z) \, \mathrm{d}x \, \mathrm{d}y
+\end{equation}
+where \( S \) is the \textbf{upper side} of the upper hemisphere \( x^2 + y^2 + z^2 = R^2 \) (\( z \geq 0 \)).
+
+\end{document}

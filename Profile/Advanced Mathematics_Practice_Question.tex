@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{esvect}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+\begin{enumerate}
+\item Compute the distance from $P(3,-1,2)$ to the line $\begin{cases} x + y - z = -1 \\ 2x - y + z = 4 \end{cases}$.
+
+\item Given $|\vv{a}| = 3$, $|\vv{b}| = 4$, $|\vv{c}| = 5$, $\vv{a} + \vv{b} + \vv{c} = \vv{0}$, \\
+compute $|\vv{a} \times \vv{b} + \vv{b} \times \vv{c} + \vv{c} \times \vv{a}|$.
+
+\item Compute $L = \lim_{x \to 0} (|\vv{a} + x\vv{b}| - |\vv{a} - x\vv{b}|)/x$.
+
+\item Compute the distance from point $P(1,2,-1)$ to the line $L: (x-1)/2 = (y+1)/(-1) = (z-2)/3$.
+
+\item Find and classify the critical points of $f(x,y) = e^{-x}(x - y^3 + 3y)$.
+
+\item Find points on $C: \begin{cases} x^2 + y^2 = 2z^2 \\ x + y + 3z = 5 \end{cases}$ with extremal distances to the $xOy$ plane.
+
+\item Given $A(1,3,4)$, $B(3,5,6)$, $C(2,5,8)$, $D(4,2,10)$, compute $V_{\text{ABCD}}$.
+
+\item A plane passes through the z-axis and forms an angle of $\pi/3$ with the plane $2x + y - \sqrt{5}z = 0$.\\
+Find the equation of the plane.
+
+\item Prove that $L_1:x/1=y/2=z/3$ and $L_2:(x-1)/1=(y+1)/1=(z-2)/1$ are skew lines,\\
+find their common perpendicular, and compute the distance between them.
+
+\item Find the extreme points and extreme values of $z = z(x, y)$ from $x^2 - 6xy + 10y^2 - 2yz - z^2 + 18 = 0$.
+
+\item Find the minimum and maximum values of $u$ given:
+$\begin{cases} u = x^2 + y^2 + z^2 \\ z = x^2 + y^2 \\ x + y + z = 4 \end{cases}$.
+
+\item Find the maximum value of $xyz$ subject to $x^2/a^2 + y^2/b^2 + z^2/c^2 = 1$.
+
+\item For $z = f(x,y) = \begin{cases} 0, & x^2 + y^2 = 0 \\ (x^2 + y^2)\sin(1/\sqrt{x^2 + y^2}), & x^2 + y^2 \neq 0 \end{cases}$,\\
+study: Continuity, Partial Derivatives, Differentiability, Continuity of Partial Derivatives.
+
+\item Compute $\iint_D (x^2 - |x|\arctan y + x^3 e^y) dxdy$, where $D = \{(x,y) \mid x^2 + y^2 < 1\}$.
+
+\item A thin plate occupies region $D$ bounded by $y = x^2$ and $y = x$, with density $\mu(x,y) = x^2 y$.\\
+Find the centroid.
+
+\item Compute $\iint_D (x^2 + y^2) d\sigma$, where $D=\{(x,y)\mid 0\leq y\leq \sin x,\ 0\leq x\leq \pi\}$.
+
+\item Compute $\iint_D e^{\max\{b^2x^2, a^2y^2\}} d\sigma$, where $D=\{(x,y)|-a\leq x\leq a, -b\leq y\leq b\}$.
+
+\item Compute $\lim_{r \to 0} [\iint_D e^{x^2 - y^2} \cos(x+y) d\sigma]/(\pi r^2)$, where $D = \{(x,y) | x^2 + y^2 \leq r^2\}$.
+
+\item Compute $I = \int_0^1 \int_0^{1-x} \int_{x+y}^1 (\sin z)/z  dz dy dx$.
+
+\item Prove $\int_0^1 dx \int_x^1 dy \int_x^y f(x)f(y)f(z)dz = \frac{1}{6}(\int_0^1 f(t)dt)^3$.
+
+\item Let $\Sigma$ be the finite part of $z=(x^2+y^2)/2$ cut by $z=2$. Compute $\iint_{\Sigma} z dS$.
+
+\item Let $\Sigma$ be the outer surface of $x^2 + y^2 + z^2 = 9$. Compute $\iint_{\Sigma} z dxdy$.
+
+\item Compute $I = \oint_D xy dx + z^2 dy + zx dz$, where $D$ is the intersection of $z = \sqrt{x^2 + y^2}$ and $x^2 + y^2 = 2ax$ ($a > 0$), oriented counterclockwise when viewed from positive $z$-axis.
+
+\item Let $\Sigma$ be the lower side of $z = x^2 + y^2$ where $0 \leq z \leq a^2$. Compute:\\
+$\iint_\Sigma (y - x^2 + z^2) dy dz + (x - z^2 + y^2) dz dx + (z - y^2 + x^2) dx dy$.
+
+\item Let $\Sigma$ be the oriented surface $z = x^2 + y^2$ ($0 \leq z \leq 1$), with normal forming acute angle with positive z-axis. Compute $\iint_\Sigma (2x + z) dy dz + z dx dy$.
+
+\item Given $f(0)=0$, $f'(0)=1$, and $[xy(x+y)-f(x)y]dx + [f'(x)+x^2y]dy = 0$ is exact. Find its general solution.
+
+\item Given $f(0)=1/2$ and $\int_L [e^x + f(x)]y dx - f(x) dy$ is path-independent. Compute from $(0,0)$ to $(1,1)$.
+
+\item For all smooth oriented closed surfaces $\Sigma$ in $x>0$, $\iint_{\Sigma} xf(x)dydz - xyf(x)dzdx - e^{2x}zdxdy = 0$.\\
+Given $\lim_{x\to 0^+} f(x) = 1$, find $f(x)$.
+
+\item Compute $I = \iint_\Sigma x^2 dS$, where $\Sigma$ is part of cylinder $x^2 + y^2 = a^2$ between $z=0$ and $z=h$ ($h>0$).
+
+\item Let $\Sigma$ be the part of $z = x^2 + y^2$ below $z = 1$. Compute $I = \iint_\Sigma |xyz| dS$.
+
+\item Prove that $(yz e^{xyz} + 2x)dx + (zx e^{xyz} + 3y^2)dy + (xy e^{xyz} + 4z^3)dz$ is exact and find its potential function.
+
+\item Compute $\lim_{t \to 0} [\iiint_{x^2+y^2+z^2 \leq t^2} f(\sqrt{x^2+y^2+z^2}) dv]/(\pi t^4)$.
+
+\item Compute $\lim_{n\to\infty} \sum_{i=1}^n\sum_{j=1}^n n/[(n+i)(n^2+j^2)]$.
+
+\item Given $r=\sqrt{x^2+y^2+z^2}$, $\Sigma$ is outer surface of $x^2+y^2+z^2=a^2$. Compute $\iint_\Sigma (x dy dz + y dz dx + z dx dy)/r^3$.
+
+\item Compute $\iiint_\Omega z dx dy dz$, where $\Omega$ is bounded by cone $z=(h/R)\sqrt{x^2+y^2}$ and plane $z=h$ ($R>0$, $h>0$).
+
+\item Compute $S = \sum_{n=0}^{\infty} (-1)^n (n^2 - n + 1)/2^n$.
+
+\item Expand $f(x) = \cos x$ as a Sine Series on $[0, \pi]$.
+
+\item If $\sum_{n=1}^{\infty} a_n$ converges, provide counterexamples showing the following may not converge:
+\begin{enumerate}[(i)]
+    \item $\sum_{n=1}^{\infty} |a_n|$
+    \item $\sum_{n=1}^{\infty} (-1)^n a_n$
+    \item $\sum_{n=1}^{\infty} a_n a_{n+1}$
+\end{enumerate}
+
+\item Compute $\lim_{n\to\infty} \frac{1}{n} \sum_{k=1}^n \frac{1}{3^k} (1+\frac{1}{k})^{k^2}$.
+
+\item Given $f(x) = 2x^2/(1 + x^2)$, compute $f^{(6)}(0)$.
+
+\item Find the sum function of $\sum_{n=2}^{\infty} x^n/(n^2-1)$.
+
+\item Expand $f(x) = \frac{1}{4}\ln((1+x)/(1-x)) + \frac{1}{2}\arctan x - x$ into a power series.
+
+\item Study the power series $\sum_{n=1}^\infty x^{n+1}/[n(n+1)]$.
+
+\item Prove convergence of $\sum_{n=1}^\infty \int_{n\pi}^{(n+1)\pi} (\sin x)/x dx$.
+
+\end{enumerate}
+
+\end{document}

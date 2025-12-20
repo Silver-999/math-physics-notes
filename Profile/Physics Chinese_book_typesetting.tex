@@ -1,0 +1,163 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{esint}
+\usepackage[UTF8]{ctex}
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+
+\begin{document}
+
+\section{平动与圆周运动}
+\subsection{平动}
+\begin{itemize}
+    \item 位矢：$\overrightarrow{r} = \overrightarrow{r}(t) = x(t)\overrightarrow{i} + y(t)\overrightarrow{j} + z(t)\overrightarrow{k}$
+    \item 位移：$\Delta \overrightarrow{r} = \overrightarrow{r}(t + \Delta t) - \overrightarrow{r}(t) = \Delta x\overrightarrow{i} + \Delta y\overrightarrow{j} + \Delta z\overrightarrow{k}$
+    \item 关系：$|\Delta \overrightarrow{r}| \neq \Delta r \quad |\Delta \overrightarrow{r}| \neq \Delta s \quad |d\overrightarrow{r}| = ds$
+    \item 速度：$\overrightarrow{v} = \lim_{\Delta t \to 0} \Delta \overrightarrow{r}/\Delta t = d\overrightarrow{r}/dt = dx/dt\overrightarrow{i} + dy/dt\overrightarrow{j} + dz/dt\overrightarrow{k}$
+    \item 加速度：$\overrightarrow{a} = d\overrightarrow{v}/dt = d^2 \overrightarrow{r}/dt^2 = d^2 x/dt^2\overrightarrow{i} + d^2 y/dt^2\overrightarrow{j} + d^2 z/dt^2\overrightarrow{k}$
+\end{itemize}
+
+\subsection{圆周运动}
+\begin{itemize}
+    \item 角速度：$\omega = d\theta/dt$
+    \item 角加速度：$\alpha = d\omega/dt = d^2 \theta/dt^2$
+    \item 线加速度：$\overrightarrow{a} = \overrightarrow{a}_n + \overrightarrow{a}_t$
+    \item 法向加速度：$a_n = v^2/R = R\omega^2$ (指向圆心)
+    \item 切向加速度：$a_t = dv/dt = R\alpha$ (沿切线方向)
+    \item 线速率：$v = R\omega$
+    \item 弧长：$s = R\theta$
+    \item 伽利略速度变换：$\overrightarrow{v}_{AB} = \overrightarrow{v}_{AC} + \overrightarrow{v}_{CB}$
+\end{itemize}
+
+\section{牛顿运动定律与惯性力}
+\subsection{牛顿运动定律}
+\begin{itemize}
+    \item $\overrightarrow{F} = d\overrightarrow{p}/dt$，$\overrightarrow{p} = m\overrightarrow{v}$
+    \item $m$为常量时，$\overrightarrow{F} = md\overrightarrow{v}/dt = m\overrightarrow{a}$
+    \item 重力：$\overrightarrow{P} = m\overrightarrow{g}$
+    \item 弹簧力：$\overrightarrow{F} = -k\overrightarrow{x}$
+    \item 摩擦力：滑动摩擦 $f = \mu N$，静摩擦 $f <= \mu_s N$
+\end{itemize}
+
+\subsection{惯性力}
+\begin{itemize}
+    \item 平动加速参照系：$\overrightarrow{F}_i = -m\overrightarrow{a}_0$
+    \item 转动参照系：$\overrightarrow{F}_i = m\omega^2 \overrightarrow{r}$
+\end{itemize}
+
+\section{动量与能量}
+\subsection{动量与冲量}
+\begin{itemize}
+    \item 动量：$\overrightarrow{p} = m\overrightarrow{v}$
+    \item 冲量：$\overrightarrow{I} = \int_{t_1}^{t_2} \overrightarrow{F} dt$
+    \item 动量定理：$d\overrightarrow{p} = \int_{t_1}^{t_2} \overrightarrow{F} dt$，$\overrightarrow{p} - \overrightarrow{p}_0 = \int_{t_1}^{t_2} \overrightarrow{F} dt$
+    \item 动量守恒定律：若$\overrightarrow{F}_{\text{外力}} = \sum_i \overrightarrow{F}_i = 0$，则$\overrightarrow{p} = \sum_i \overrightarrow{p}_i$为常矢量
+\end{itemize}
+
+\subsection{功与能}
+\begin{itemize}
+    \item 功：$dW = \overrightarrow{F} \cdot d\overrightarrow{r}$，$W_{AB} = \int_A^B \overrightarrow{F} \cdot d\overrightarrow{r}$
+    \item 一般形式：$W_{AB} = \int_{x_A}^{x_B} F_x dx + \int_{y_A}^{y_B} F_y dy + \int_{z_A}^{z_B} F_z dz$
+    \item 动能：$E_k = (1/2)mv^2$
+    \item 动能定理：
+        \begin{itemize}
+            \item 质点：$W_{AB} = (1/2)mv_B^2 - (1/2)mv_A^2$
+            \item 质点系：$W_{\text{外力}} + W_{\text{内力}} = E_k - E_{k0}$
+        \end{itemize}
+    \item 保守力：做功与路径无关的力
+    \item 保守内力的功：$W_{\text{保守内力}} = -(E_{p_a} - E_{p_b}) = -\Delta E_p$
+    \item 功能原理：$W_{\text{外力}} + W_{\text{非保守内力}} = \Delta E_k + \Delta E_p$
+    \item 机械能守恒：若$W_{\text{外力}} + W_{\text{非保守内力}} = 0$，则$E_k + E_p = E_{k0} + E_{p0}$
+\end{itemize}
+
+\section{角动量与刚体转动}
+\subsection{角动量与力矩}
+\begin{itemize}
+    \item 力矩：$\overrightarrow{M} = \overrightarrow{r} \times \overrightarrow{F}$
+    \item 角动量：$\overrightarrow{L} = \overrightarrow{r} \times \overrightarrow{p} = m\overrightarrow{r} \times \overrightarrow{v}$
+    \item 角动量定理：$\overrightarrow{M}_{\text{外力}} = d\overrightarrow{L}/dt$
+    \item 角动量守恒：若$\overrightarrow{M}_{\text{外力}} = \sum \overrightarrow{M}_{\text{外力}} = 0$，则$\overrightarrow{L} = \sum \overrightarrow{L}_i$为常矢量
+\end{itemize}
+
+\subsection{转动惯量与刚体转动}
+\begin{itemize}
+    \item 转动惯量：
+        \begin{itemize}
+            \item 离散系统：$J = \sum m_i r_i^2$
+            \item 连续系统：$J = \int r^2 dm$
+        \end{itemize}
+    \item 平行轴定理：$J = J_C + md^2$
+    \item 刚体定轴转动：
+        \begin{itemize}
+            \item 角动量：$L = J\omega$
+            \item 转动定律：$M = J\alpha = dL/dt$
+            \item 角动量定理：$\int_{t_1}^{t_2} M dt = L - L_0$
+            \item 力矩的功：$W = \int M d\theta$
+            \item 功率：$P = dW/dt = M\omega$
+            \item 转动动能：$E_k = (1/2)J\omega^2$
+            \item 动能定理：$\int_{\theta_0}^\theta M d\theta = (1/2)J\omega^2 - (1/2)J\omega_0^2$
+        \end{itemize}
+\end{itemize}
+
+\section{静电场}
+\subsection{基本定律}
+\begin{itemize}
+    \item 库仑定律：$\overrightarrow{F} = (1/4\pi\epsilon_0) q_1 q_2/r^2 \overrightarrow{e}_r$
+    \item 场强：$\overrightarrow{E} = \sum_i \overrightarrow{E}_i = \int dq/(4\pi\epsilon_0 r^2) \overrightarrow{e}_r$
+    \item 高斯定理：$\oiint_S \overrightarrow{E} \cdot d\overrightarrow{S} = (1/\epsilon_0) \sum q_i$
+    \item 环路定理：$\oint_L \overrightarrow{E} \cdot d\overrightarrow{l} = 0$
+\end{itemize}
+
+\subsection{电势与导体}
+\begin{itemize}
+    \item 电势：$V_p = \int_p^\infty \overrightarrow{E} \cdot d\overrightarrow{l}$
+    \item 带电体电势：$V = \sum V_i = \int dq/(4\pi\epsilon_0 r)$
+    \item 导体静电平衡：
+        \begin{itemize}
+            \item 电场：导体内$\overrightarrow{E}=0$，表面$\overrightarrow{E}$垂直表面
+            \item 电势：导体是等势体，表面是等势面
+            \item 电荷：分布在表面，空腔内有电荷时内表面有等量异种电荷
+        \end{itemize}
+    \item 电介质高斯定理：$\oiint_S \overrightarrow{D} \cdot d\overrightarrow{S} = \sum q_i$
+\end{itemize}
+
+\section{磁场}
+\subsection{基本定律}
+\begin{itemize}
+    \item 毕奥-萨伐尔定律：$d\overrightarrow{B} = \mu_0 I d\overrightarrow{l} \times \overrightarrow{e}_r/(4\pi r^2)$
+    \item 磁场高斯定理：$\oiint_S \overrightarrow{B} \cdot d\overrightarrow{S} = 0$
+    \item 安培环路定理：$\oint \overrightarrow{B} \cdot d\overrightarrow{l} = \mu_0 \sum I_i$
+\end{itemize}
+
+\subsection{典型磁场}
+\begin{itemize}
+    \item 载流长直导线：$B = \mu_0 I (\cos\theta_1 - cos\theta_2)/(4\pi r) $
+    \item 无限长直导线：$B = \mu_0 I/2\pi r$
+    \item 长直螺线管：$B = \mu_0 n I (\cos\theta_1 - cos\theta_2) /2 $
+    \item 无限长螺线管：$B = \mu_0 n I$
+\end{itemize}
+
+\subsection{磁力与磁介质}
+\begin{itemize}
+    \item 洛仑兹力：$\overrightarrow{F} = q\overrightarrow{v} \times \overrightarrow{B}$
+    \item 安培力：$d\overrightarrow{F} = I d\overrightarrow{l} \times \overrightarrow{B}$
+    \item 磁介质：
+        \begin{itemize}
+            \item 高斯定理：$\oiint_S \overrightarrow{B} \cdot d\overrightarrow{S} = 0$
+            \item 环路定理：$\oint_L \overrightarrow{H} \cdot d\overrightarrow{l} = \sum I_i$
+            \item 本构关系：$\overrightarrow{B} = \mu_r \mu_0 \overrightarrow{H} = \mu \overrightarrow{H}$
+        \end{itemize}
+\end{itemize}
+
+\section{电磁感应}
+\begin{itemize}
+    \item 法拉第定律：$\varepsilon = -d\Phi/dt$
+    \item 动生电动势：$\varepsilon = \int (\overrightarrow{v} \times \overrightarrow{B}) \cdot d\overrightarrow{l}$
+    \item 感生电动势：$\varepsilon = \oint \overrightarrow{E}_k \cdot d\overrightarrow{l} = -\iint_S \partial \overrightarrow{B}/\partial t \cdot d\overrightarrow{S}$
+    \item 自感：$\Phi = LI$，$\varepsilon_L = -L dI/dt$
+    \item 自感磁能：$W_m = (1/2)LI^2$
+    \item 互感：$\Phi_2 = MI_1$，$\varepsilon_2 = -M dI_1/dt$
+    \item 磁能密度：$w_m = (1/2)B^2/\mu = (1/2)\mu H^2 = (1/2)BH$
+\end{itemize}
+
+\end{document}
