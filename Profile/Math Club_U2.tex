@@ -1,0 +1,282 @@
+\documentclass[aspectratio=169,8pt]{beamer}
+\usepackage{silence}
+\WarningFilter{hyperref}{Option `driverfallback' has already been used}
+\PassOptionsToPackage{unicode,CJKbookmarks}{hyperref}
+\usepackage[UTF8]{ctex}
+\usepackage[T1]{fontenc}
+\usepackage[default,scale=0.95]{sourcesanspro}
+\usefonttheme{professionalfonts}
+\usetheme{Ilmenau}
+\usecolortheme{whale}
+\usepackage{graphicx}
+\graphicspath{{figs/}}
+\usepackage[absolute,overlay]{textpos}
+\setbeamerfont{caption}{size=\scriptsize}
+\setbeamerfont{caption name}{size=\scriptsize}
+\setlength{\parskip}{0.4em}
+\newcommand{\CN}[1]{{\CJKfamily{hei}#1}}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\lstset{
+basicstyle=\ttfamily\small,
+numbers=none,
+breaklines=true,
+showstringspaces=false,
+keywordstyle=\color{blue},
+commentstyle=\color{gray},
+stringstyle=\color{red},
+columns=fullflexible,
+keepspaces=true,
+texcl=false,
+escapeinside={(@}{@)},
+}
+\lstdefinestyle{matCN}{
+basicstyle=\ttfamily\scriptsize,
+aboveskip=0.3ex,
+belowskip=-0.7ex,
+language=Matlab,
+texcl=true,
+morecomment=[l]\%,
+morestring=[b]", 
+}
+\lstset{inputencoding=utf8}
+\DeclareRobustCommand{\codeinfo}[1]{
+\nointerlineskip
+{\raggedright\color{gray}\tiny \textbf{文件：}\nolinkurl{#1}}
+}
+\usepackage{anyfontsize}
+\renewcommand{\familydefault}{\sfdefault}
+\AtBeginDocument{
+  \fontsize{20}{24}\selectfont
+}
+\setbeamerfont{title}{size=\fontsize{28}{40}\selectfont, series=\bfseries}
+\setbeamerfont{author}{size=\fontsize{22}{25}\selectfont}
+\setbeamerfont{institute}{size=\fontsize{15}{22}\selectfont}
+\setbeamerfont{date}{size=\fontsize{15}{17}\selectfont}
+
+\title{期末复习第二单元}
+\author{数学社}
+\institute{24计量测试与仪器学院智能感知工程1班吴奕铭}
+\date{2025年12月27日}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+\centering
+\begin{tabular}{lcccc}
+\toprule
+试卷年份 & 小题分值 & 大题分值 & 总分值 \\
+\midrule
+2018 & 4 & 6 & 10 \\
+2019 & 4 & 6 & 10 \\
+2020 & 4 & 6 & 10 \\
+\bottomrule
+\end{tabular}
+\end{frame}
+
+\begin{frame}{1. 导数定义}
+\begin{block}{定义}
+\[
+f^{\prime}(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{2. 链式法则}
+\begin{block}{公式}
+\[
+[f(g(x))]^{\prime} = f^{\prime}(g(x)) \cdot g^{\prime}(x)
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{3. 参数方程}
+\[
+\begin{cases}
+x = x(t) \\
+y = y(t)
+\end{cases}
+\]
+\begin{block}{变换}
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}y/\mathrm{d}t}{\mathrm{d}x/\mathrm{d}t}
+\]
+\end{block}
+
+\end{frame}
+
+\begin{frame}{4. 幂指函数}
+\[
+y = u(x)^{v(x)} \quad (u>0)
+\]
+
+\begin{block}{对数求导法}
+\[
+\ln y = v(x) \ln u(x)
+\]
+\[
+y^{\prime}/y = v^{\prime} \ln u + v \cdot u^{\prime}/u
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{补充：三角函数的求导公式}
+\huge
+\[
+\begin{alignedat}{2}
+& (\sin x)' = \cos x, &\qquad & (\cos x)' = -\sin x, \\
+& (\tan x)' = \sec^2 x, && (\cot x)' = -\csc^2 x, \\
+& (\sec x)' = \sec x \tan x, && (\csc x)' = -\csc x \cot x.
+\end{alignedat}
+\]
+\[
+\begin{alignedat}{2}
+& (\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}, && (\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}, \\
+& (\arctan x)' = \frac{1}{1 + x^2}, && (\mathrm{arccot}\, x)' = -\frac{1}{1 + x^2}.
+\end{alignedat}
+\]
+\end{frame}
+
+\begin{frame}{补充：反函数求导法则}
+\[
+y = \arcsin x \ \Rightarrow\ x = \sin y
+\]
+\[
+\frac{\mathrm{d}x}{\mathrm{d}y} = \cos y \ \Rightarrow\ \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1}{\cos y}
+\]
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1}{\sqrt{1 - x^2}} \quad (-1<x<1)
+\]
+\end{frame}
+
+\begin{frame}[fragile]{U2-2023-1-05}
+\[
+y = f\left(x^3\right),\quad \frac{\mathrm{d}^2 y}{\mathrm{d}x^2}=
+\]
+\end{frame}
+
+\begin{frame}[fragile]{U2-2023-1-05}
+\[
+y = f\left(x^3\right),\quad \frac{\mathrm{d}^2 y}{\mathrm{d}x^2}=
+\]
+\begin{block}{答案}
+\[
+6 x f^{\prime}\left(x^3\right)+9 x^4 f^{\prime\prime}\left(x^3\right)
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{U2-2023-2-02}
+\[
+\begin{cases}
+x = \ln(1+t^2) \\
+y = t - \arctan t
+\end{cases}
+,\quad
+\frac{\mathrm{d}y}{\mathrm{d}x}=
+\]
+\end{frame}
+
+\begin{frame}[fragile]{U2-2023-2-02}
+\[
+\begin{cases}
+x = \ln(1+t^2) \\
+y = t - \arctan t
+\end{cases}
+,\quad
+\frac{\mathrm{d}y}{\mathrm{d}x}=
+\]
+\begin{block}{答案}
+\[
+= \frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}
+= \frac{(t-\arctan t)^{\prime}}{(\ln(1+t^2))^{\prime}}
+= \frac{1-\frac{1}{1+t^2}}{\frac{2t}{1+t^2}}
+= \frac{t}{2}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{U2-2024-1-03}
+\[
+\lim_{\Delta x \to 0} \frac{f(x_0-2\Delta x)-f(x_0)}{\Delta x}
+\]
+\end{frame}
+
+\begin{frame}[fragile]{U2-2024-1-03}
+\[
+\lim_{\Delta x \to 0} \frac{f(x_0-2\Delta x)-f(x_0)}{\Delta x}
+\]
+\begin{block}{答案}
+\[
+-2f^{\prime}(x_0)
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{U2-2024-2-02}
+\[
+e^y = 1 - xy,\quad y = y(x),\quad \left.\frac{\mathrm{d}y}{\mathrm{d}x}\right|_{x=0}
+\]
+\end{frame}
+
+\begin{frame}[fragile]{U2-2024-2-02}
+\[
+e^y = 1 - xy,\quad y = y(x),\quad \left.\frac{\mathrm{d}y}{\mathrm{d}x}\right|_{x=0}
+\]
+\begin{block}{答案}
+\[
+y^{\prime} = - \frac{y}{x+e^y} ,\quad y^{\prime}(0)=0
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{U2-2025-1-03}
+\[
+y = \frac{1}{2} \arctan \frac{2x}{1-x^2} ,\quad \frac{\mathrm{d}y}{\mathrm{d}x}
+\]
+\end{frame}
+
+\begin{frame}[fragile]{U2-2025-1-03}
+\[
+y = \frac{1}{2} \arctan \frac{2x}{1-x^2}
+\]
+\begin{block}{答案}
+\[
+=\frac12\cdot\frac{1}{1+\left(\frac{2x}{1-x^2}\right)^2}\cdot\frac{2(1-x^2)-2x(-2x)}{(1-x^2)^2}
+=\frac{1}{1+x^2}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{U2-2025-1-04}
+\[
+y = \sqrt[x]{x},\quad x>0 ,\quad y^{\prime}=
+\]
+\end{frame}
+
+\begin{frame}[fragile]{U2-2025-1-04}
+\[
+y = \sqrt[x]{x},\quad x>0 ,\quad y^{\prime}=
+\]
+\begin{block}{答案}
+\[
+y^{\prime} = \sqrt[x]{x} \frac{1-\ln x}{x^2}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{U2}
+\begin{center}
+\zihao{1} 谢谢大家 \\
+\vspace{1em}
+\zihao{3} 第三单元，夏鑫老师有请
+\end{center}
+\end{frame}
+
+\end{document}
