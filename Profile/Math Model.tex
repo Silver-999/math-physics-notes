@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, array}
+\usepackage{mathrsfs}
+\usepackage{geometry}
+\usepackage{ragged2e}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\RaggedRight
+
+\section*{Mathematical Programming}
+
+\noindent Optimization problem:
+\begin{align*}
+&\text{min or max } u = f(x), \quad x \in \Omega \\
+&\text{subject to:} \\
+&h_i(x) = 0, \quad i = 1,2,\ldots,m \\
+&g_j(x) \leq 0, \quad j = 1,2,\ldots,p
+\end{align*}
+
+\section*{Statistical Regression}
+
+\noindent Regression equation:
+\[
+\begin{cases}
+y = \beta_0 + \beta_1 x + \varepsilon \\
+\mathbb{E}[\varepsilon] = 0, \quad \text{Var}(\varepsilon) = \sigma^2
+\end{cases}
+\]
+
+\noindent Parameter estimates:
+\[
+\begin{cases}
+\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x} \\
+\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}
+\end{cases}
+\]
+
+\noindent Confidence intervals:
+\[
+\begin{cases}
+\beta_0: \left[\hat{\beta}_0 - t_{1-\alpha/2}(n-2)\hat{\sigma}_e\sqrt{\frac{1}{n} + \frac{\bar{x}^2}{L_{xx}}}, \hat{\beta}_0 + t_{1-\alpha/2}(n-2)\hat{\sigma}_e\sqrt{\frac{1}{n} + \frac{\bar{x}^2}{L_{xx}}}\right] \\
+\beta_1: \left[\hat{\beta}_1 - \frac{t_{1-\alpha/2}(n-2)\hat{\sigma}_e}{\sqrt{L_{xx}}}, \hat{\beta}_1 + \frac{t_{1-\alpha/2}(n-2)\hat{\sigma}_e}{\sqrt{L_{xx}}}\right]
+\end{cases}
+\]
+
+\noindent Sum of squares:
+\begin{align*}
+\text{TSS} &= \sum y_i^2 = \sum (Y_i - \bar{Y})^2 \\
+\text{ESS} &= \sum \hat{y}_i^2 = \sum (\hat{Y}_i - \bar{Y})^2 \\
+\text{RSS} &= \sum e_i^2 = \sum (Y_i - \hat{Y}_i)^2
+\end{align*}
+
+\noindent Goodness of fit:
+\[ R^2 = \frac{\text{ESS}}{\text{TSS}} = 1 - \frac{\text{RSS}}{\text{TSS}} \]
+
+\noindent F-test:
+\[
+F = \frac{U}{Q_e/(n-2)} \sim F(1,n-2), \quad 
+\begin{cases}
+U = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2 \\
+Q_e = \sum_{i=1}^n (y_i - \hat{y}_i)^2
+\end{cases}
+\]
+
+\noindent Decision rule:
+\[
+\begin{cases}
+F > F_{1-\alpha}(1,n-2): \text{Reject } H_0 \\
+F \leq F_{1-\alpha}(1,n-2): \text{Accept } H_0
+\end{cases}
+\]
+
+\noindent Prediction interval:
+\[
+\left(\hat{y} - \hat{\sigma}_e\sqrt{1 + \sum_{i=0}^k \sum_{j=0}^k c_{i,j}x_i x_j}\, t_{1-\alpha/2}(n-k-1), \hat{y} + \hat{\sigma}_e\sqrt{1 + \sum_{i=0}^k \sum_{j=0}^k c_{i,j}x_i x_j}\, t_{1-\alpha/2}(n-k-1)\right)
+\]
+
+\section*{Principal Component Analysis}
+
+\noindent Covariance:
+\[ \text{cov}(x,y) = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y}) \]
+
+\noindent Correlation coefficient:
+\[ \text{corr}(x_j,x_k) = \frac{\sum_{i=1}^n (x_{ij} - \bar{x}_j)(x_{ik} - \bar{x}_k)}{\sqrt{\sum_{i=1}^n (x_{ij} - \bar{x}_j)^2 \sum_{i=1}^n (x_{ik} - \bar{x}_k)^2}} = \frac{\text{cov}(x_j,x_k)}{\sqrt{\text{var}(x_j)\text{var}(x_k)}} \]
+
+\noindent Data matrix:
+\[ X = \begin{bmatrix}
+x_{11} & x_{12} & \cdots & x_{1m} \\
+x_{21} & x_{22} & \cdots & x_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+x_{n1} & x_{n2} & \cdots & x_{nm}
+\end{bmatrix} \]
+
+\noindent Standardization methods:
+\[
+\begin{cases}
+x_{ij}^* = \frac{x_{ij} - \bar{x}_j}{\sigma_j}, & i=1,\ldots,n; j=1,\ldots,m \\
+x_{ij}^* = \frac{x_{ij} - \min(x_j)}{\max(x_j) - \min(x_j)}, & i=1,\ldots,n; j=1,\ldots,m
+\end{cases}
+\]
+
+\noindent Variance contribution rate:
+\[ e_k = \frac{\text{var}(F_k)}{\sum_{i=1}^p \text{var}(F_i)} = \frac{\lambda_k}{\sum_{i=1}^p \lambda_i} \]
+
+\section*{Differential Equations}
+
+\noindent Numerical integration (Trapezoidal rule):
+\[ y(x_{i+1}) - y(x_i) = \int_{x_i}^{x_{i+1}} f(t,y(t))\,dt \approx \frac{x_{i+1} - x_i}{2} \left[ f(x_i,y(x_i)) + f(x_{i+1},y(x_{i+1})) \right] \]
+
+\noindent Numerical solution:
+\[
+\begin{cases}
+y_{i+1} = y_i + \frac{h}{2} \left[ f(x_i,y_i) + f(x_{i+1},y_{i+1}) \right] \\
+y_0 = y(x_0)
+\end{cases}
+\]
+
+\section*{Time Series}
+
+\noindent Autocovariance:
+\[ \gamma_X(t,s) = \mathbb{E}[(X_t - \mu_X(t))(X_s - \mu_X(s))], \quad t,s \in T \]
+
+\noindent Autocorrelation:
+\[ \rho_X(t,s) = \frac{\gamma_X(t,s)}{\sqrt{D_X(t)D_X(s)}}, \quad t,s \in T \]
+
+\noindent Sample autocovariance:
+\[ \hat{\gamma}(k) = \frac{1}{n} \sum_{i=1}^{n-k} (x_i - \bar{x})(x_{i+k} - \bar{x}) \]
+
+\noindent Sample autocorrelation:
+\[ \hat{\rho}(k) = \frac{\hat{\gamma}(k)}{\hat{\gamma}(0)} = \frac{\sum_{i=1}^{n-k} (x_i - \bar{x})(x_{i+k} - \bar{x})}{\sum_{i=1}^n (x_i - \bar{x})^2} \]
+
+\noindent MA(q) model autocorrelation:
+\[
+\rho_k = 
+\begin{cases}
+1, & k = 0 \\
+\frac{-\theta_k + \sum_{i=1}^{q-k} \theta_i \theta_{k+i}}{1 + \sum_{i=1}^q \theta_i^2}, & 1 \leq k \leq q \\
+0, & k > q
+\end{cases}
+\]
+
+\noindent Model selection criteria:
+\begin{align*}
+\text{FPE}_p &= \frac{n + p}{n - p} \hat{\sigma}^2 \\
+\text{AIC} &= \ln(\hat{\sigma}^2) + \frac{2}{n}(p + q + 1)
+\end{align*}
+where $\hat{\sigma}^2$ is the variance estimate, $n$ is sample size, and $p,q$ are model orders.
+
+\end{document}
